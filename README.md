@@ -12,35 +12,35 @@
 
 ### 2. Настройки браузера
 Для правильной настройки Zapret поставьте на DEFAULT (а не выключите!) протокол QUIC по адресу:
-```
+```css
 about://flags/#enable-quic
 ```
 
 В настройках браузера включите Comss DNS, Ваш провайдер может блокировать запросы DNS:
-```
+```css
 about://settings/security
 ```
 
 И впишите в строку "Безопасный провайдер DNS":
-```
+```css
 https://dns.comss.one/dns-query
 ```
 Иногда данный DNS сервер не разблокирует заблокированные ресурсы. В таком случае попробуйте сменить DOH от компаний Google DNS, Cloudflare DNS или Next DNS.
 
 Также другие DNS сервисы: 
-```
+```css
 https://common.dot.dns.yandex.net/dns-query
 ```
-```
+```css
 https://dns.comss.one/dns-query
 ```
-```
+```css
 https://dns.adguard-dns.com/dns-query
 ```
-```
+```css
 https://dns.cloudflare.com/dns-query
 ```
-```
+```css
 https://doh.opendns.com/dns-query
 ```
 > [!IMPORTANT]  
