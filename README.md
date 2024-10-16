@@ -48,7 +48,7 @@ https://doh.opendns.com/dns-query
 > [!IMPORTANT]  
 > **После каждой смены DNS серверов обязательно перезапускайте браузер!**
 
-### Частые ошибки
+## Частые ошибки
 Ошибка ниже говорит о том что Вы не разархивировали zip архив через встроенные средства Windows или 7zip.
 
 ![image](https://github.com/user-attachments/assets/09a9c77e-c45b-408a-99b4-21899643cf7a)
