@@ -18,7 +18,7 @@ about://flags/#enable-quic
 
 В настройках браузера включите Comss DNS, Ваш провайдер может блокировать запросы DNS:
 ```
-chrome://settings/security
+about://settings/security
 ```
 
 И впишите в строку "Безопасный провайдер DNS":
