@@ -27,6 +27,22 @@ https://dns.comss.one/dns-query
 ```
 Иногда данный DNS сервер не разблокирует заблокированные ресурсы. В таком случае попробуйте сменить DOH от компаний Google DNS, Cloudflare DNS или Next DNS.
 
+Также другие DNS сервисы: 
+```
+https://common.dot.dns.yandex.net/dns-query
+```
+```
+https://dns.comss.one/dns-query
+```
+```
+https://dns.adguard-dns.com/dns-query
+```
+```
+https://dns.cloudflare.com/dns-query
+```
+```
+https://doh.opendns.com/dns-query
+```
 > [!IMPORTANT]  
 > **После каждой смены DNS серверов обязательно перезапускайте браузер!**
 
