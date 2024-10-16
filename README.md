@@ -21,6 +21,8 @@ about://flags/#enable-quic
 about://settings/security
 ```
 
+![image](https://github.com/user-attachments/assets/93c0f374-3ccd-41ab-837c-59588b293aca)
+
 И впишите в строку "Безопасный провайдер DNS":
 ```css
 https://dns.comss.one/dns-query
