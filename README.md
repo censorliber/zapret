@@ -54,6 +54,7 @@ https://doh.opendns.com/dns-query
 ![image](https://github.com/user-attachments/assets/09a9c77e-c45b-408a-99b4-21899643cf7a)
 
 ### По всем вопросам обращаться в группу https://t.me/youtubenotwork
+### Другие полезные сервисы https://github.com/awesome-windows11/CensorNet
 > [!CAUTION]  
 > При любых ошибках просьба **ВСЕГДА** оставляйте скриншот и изображение ошибки, не описывайте их на словах, так Вам нельзя будет помочь, так как не понятно что за проблема.
 > <br>
