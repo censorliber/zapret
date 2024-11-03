@@ -22,6 +22,15 @@ network.http.http3.enable_kyber
 security.tls.enable_kybe
 ```
 
+Затем включите опции:
+```
+network.dns.disableIPv6
+```
+
+```
+network.http.http3.enable
+```
+
 ### 2. Настройки файла hosts
 > [!WARNING]  
 > **ПРОВЕРЬТЕ ЧТОБЫ DNS DOH В БРАУЗЕРЕ БЫЛ ВЫКЛЮЧЕН! В ДАННЫЙ МОМЕНТ ЭТОЙ НАСТРОЙКИ НЕ ТРЕБУЕТСЯ**
