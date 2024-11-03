@@ -11,43 +11,20 @@
 <br>
 Не используйте Cent Browser и иные подобные браузеры со встроенными блокировщиками (Thromium, Ungoogled Chromium, Iridum, Brave и т.д.). Они безусловно полезны, но могут отключать некоторые функции, такие как WebRTC, которая важна для работы Discord. Поэтому для необходимых ресурсов используйте чистые браузеры. 
 
-### 2. Настройки браузера
-1. Для правильной настройки Zapret поставьте на DEFAULT (а не выключите!) протокол QUIC по адресу:
-```css
-about://flags/#enable-quic
-```
-
-2. В настройках браузера также включите сторонний DNS (DOH). Так как Ваш провайдер может блокировать запросы DNS:
-```css
-about://settings/security
-```
-
-![image](https://github.com/user-attachments/assets/93c0f374-3ccd-41ab-837c-59588b293aca)
-
-И впишите в строку "Безопасный провайдер DNS":
-```css
-https://dns.comss.one/dns-query
-```
-Иногда данный DNS сервер не разблокирует заблокированные ресурсы. В таком случае попробуйте сменить DOH от компаний Google DNS, Cloudflare DNS или Next DNS (_перезагружайте страницу после каждой смены DNS!_).
-
-Также другие DNS сервисы: 
-```css
-https://common.dot.dns.yandex.net/dns-query
-```
-```css
-https://dns.comss.one/dns-query
-```
-```css
-https://dns.adguard-dns.com/dns-query
-```
-```css
-https://dns.cloudflare.com/dns-query
-```
-```css
-https://doh.opendns.com/dns-query
-```
+### 2. Настройки файла hosts
 > [!IMPORTANT]  
-> **После каждой смены DNS серверов обязательно перезапускайте браузер!**
+> **ПРОВЕРЬТЕ ЧТОБЫ DNS DOH В БРАУЗЕРЕ БЫЛ ВЫКЛЮЧЕН! В ДАННЫЙ МОМЕНТ ЭТОЙ НАСТРОЙКИ НЕ ТРЕБУЕТСЯ**
+
+В файл hosts пропишите следующее содержание:
+
+```
+31.13.72.36 facebook.com
+31.13.72.36 www.facebook.com
+31.13.72.12 static.xx.fbcdn.net
+157.240.229.174 www.instagram.com
+157.240.229.174 instagram.com
+157.240.247.63 scontent.cdninstagram.com
+```
 
 ## Частые ошибки
 Ошибка ниже говорит о том что Вы не разархивировали zip архив через встроенные средства Windows или 7zip.
