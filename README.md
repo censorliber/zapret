@@ -35,7 +35,7 @@ network.http.http3.enable
 > [!WARNING]  
 > ПРОВЕРЬТЕ ЧТОБЫ по адресу `about://settings/security` DNS DOH В БРАУЗЕРЕ БЫЛ **ВЫКЛЮЧЕН**! В ДАННЫЙ МОМЕНТ ЭТОЙ НАСТРОЙКИ **НЕ** ТРЕБУЕТСЯ!
 
-В файл hosts пропишите следующее содержание:
+В файл `C:\Windows\System32\drivers\etc\hosts` пропишите следующее содержание:
 
 ```
 31.13.72.36 facebook.com
