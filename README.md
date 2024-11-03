@@ -12,7 +12,7 @@
 Не используйте Cent Browser и иные подобные браузеры со встроенными блокировщиками (Thromium, Ungoogled Chromium, Iridum, Brave и т.д.). Они безусловно полезны, но могут отключать некоторые функции, такие как WebRTC, которая важна для работы Discord. Поэтому для необходимых ресурсов используйте чистые браузеры. 
 
 ### 1.2 Firefox браузеры
-Зайдите по адресу `about:config` и отключите
+Зайдите по адресу `about:config` и отключите (_поставьте **`false`**_):
 ```
 network.http.http3.enable_kyber
 ```
@@ -22,7 +22,7 @@ network.http.http3.enable_kyber
 security.tls.enable_kybe
 ```
 
-Затем включите опции:
+Затем включите опции (_поставьте **`true`**_):
 ```
 network.dns.disableIPv6
 ```
