@@ -91,7 +91,14 @@ network.http.http3.retry_different_ip_family
 
 ![image](https://github.com/user-attachments/assets/8e11a3df-c720-4261-be9a-8b39af9ee32e)
 
-## 4. О вирусах
+## 4. Автозапуск
+Запустите данную команду из консоли, где следует указать необходимый файл (_в данном случае `C:\Zapret-main\start1.cmd`)_:
+
+```cmd
+reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v YTDisBystro /t REG_SZ /d "C:\Zapret-main\start1.cmd" /f
+```
+
+## 5. О вирусах
 Вирусов в программе нет. Данное творение создано с открытым исходным кодом, и Вы можете собрать его самостоятельно. В данном случае на программу ругаются неизвестные китайские вирусы, а также 360 Total Security, который является китайским и не заслуживает доверия. Все американские антивирусы молчат.
 
 **Подробнее про "вирусный" драйвер [WinDivert.dll](https://ntc.party/t/windivert-%D1%87%D1%82%D0%BE-%D1%8D%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-%D0%B7%D0%B0%D1%87%D0%B5%D0%BC-%D0%B2-%D0%BD%D1%91%D0%BC-%D0%BC%D0%B0%D0%B9%D0%BD%D0%B5%D1%80/12838)**
