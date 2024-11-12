@@ -5,5 +5,8 @@ goto :eof
 :srvdel
 net stop %1
 sc delete %1
-net stop Windivert
-sc delete Windivert
+
+net stop "WinDivert"
+sc delete "WinDivert"
+net stop "WinDivert14"
+sc delete "WinDivert14"
