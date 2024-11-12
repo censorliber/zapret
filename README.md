@@ -57,6 +57,7 @@ network.http.http3.retry_different_ip_family
 172.67.182.196 rutracker.org
 116.202.120.184 torproject.org
 116.202.120.184 bridges.torproject.org
+116.202.120.166 community.torproject.org
 ```
 
 Либо на (_предыдущий вариант удалите_):
@@ -75,6 +76,7 @@ network.http.http3.retry_different_ip_family
 172.67.182.196 rutracker.org
 116.202.120.184 torproject.org
 116.202.120.184 bridges.torproject.org
+116.202.120.166 community.torproject.org
 ```
 
 ## 2. Частые ошибки
