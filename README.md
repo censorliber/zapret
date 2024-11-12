@@ -46,9 +46,11 @@ network.http.http3.retry_different_ip_family
 31.13.72.36 facebook.com
 31.13.72.36 www.facebook.com
 31.13.72.12 static.xx.fbcdn.net
+31.13.72.18 fburl.com
 157.240.227.174 www.instagram.com
 157.240.227.174 instagram.com
 31.13.72.53 static.cdninstagram.com
+31.13.72.53 edge-chat.instagram.com
 157.240.254.63 scontent.cdninstagram.com
 157.240.205.63 scontent-hel3-1.cdninstagram.com
 104.21.32.39 rutracker.org
@@ -60,9 +62,11 @@ network.http.http3.retry_different_ip_family
 31.13.72.36 facebook.com
 31.13.72.36 www.facebook.com
 31.13.72.12 static.xx.fbcdn.net
+31.13.72.18 fburl.com
 157.240.229.174 www.instagram.com
 157.240.229.174 instagram.com
 31.13.72.53 static.cdninstagram.com
+31.13.72.53 edge-chat.instagram.com
 157.240.247.63 scontent.cdninstagram.com
 157.240.205.63 scontent-hel3-1.cdninstagram.com
 104.21.32.39 rutracker.org
