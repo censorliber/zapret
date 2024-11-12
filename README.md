@@ -41,9 +41,27 @@ network.http.http3.enable
 31.13.72.36 facebook.com
 31.13.72.36 www.facebook.com
 31.13.72.12 static.xx.fbcdn.net
+157.240.227.174 www.instagram.com
+157.240.227.174 instagram.com
+31.13.72.53 static.cdninstagram.com
+157.240.254.63 scontent.cdninstagram.com
+157.240.205.63 scontent-hel3-1.cdninstagram.com
+104.21.32.39 rutracker.org
+172.67.182.196 rutracker.org
+```
+
+Либо на (_предыдущий вариант удалите_):
+```
+31.13.72.36 facebook.com
+31.13.72.36 www.facebook.com
+31.13.72.12 static.xx.fbcdn.net
 157.240.229.174 www.instagram.com
 157.240.229.174 instagram.com
+31.13.72.53 static.cdninstagram.com
 157.240.247.63 scontent.cdninstagram.com
+157.240.205.63 scontent-hel3-1.cdninstagram.com
+104.21.32.39 rutracker.org
+172.67.182.196 rutracker.org
 ```
 
 ## Частые ошибки
