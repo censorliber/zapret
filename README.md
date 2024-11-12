@@ -1,4 +1,4 @@
-### [Zapret](https://github.com/bol-van/zapret) (Запрет: обход блокировки Discord'а и Youtube'а)
+<h2>[Zapret](https://github.com/bol-van/zapret) (Запрет: обход блокировки Discord'а и Youtube'а)</h2> 
 1. Скачать по ссылке https://github.com/censorliber/zapret/archive/refs/heads/main.zip
 2. Запустить **`start1.cmd`**
 3. Если это не помогло (_или у вас не МГТС_), то попробуйте загрузить любой из **`start.cmd`** файлов.
