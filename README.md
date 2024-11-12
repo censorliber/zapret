@@ -1,4 +1,4 @@
-<h1 align="center"><a href="https://github.com/bol-van/zapret">Zapret</a> (Запрет: обход блокировки Дискорда и Ютуба) </h1>
+<h1 align="center"><img src="https://raw.githubusercontent.com/censorliber/zapret/refs/heads/main/media/icon.png" width="30px"></img> <a href="https://github.com/bol-van/zapret">Zapret</a> (Запрет: обход блокировки Дискорда и Ютуба) </h1>
 
 1. Скачать по ссылке https://github.com/censorliber/zapret/archive/refs/heads/main.zip
 2. Запустить **`start1.cmd`**
