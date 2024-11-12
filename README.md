@@ -92,7 +92,7 @@ network.http.http3.retry_different_ip_family
 ![image](https://github.com/user-attachments/assets/8e11a3df-c720-4261-be9a-8b39af9ee32e)
 
 ## 4. Автозапуск
-Запустите данную команду из консоли, где следует указать необходимый `cmd` файл (_в данном случае `C:\Zapret-main\start1.cmd`)_:
+Запустите данную команду из консоли (_`win + r`, потом `cmd.exe`_), где следует указать необходимый `cmd` файл (_в данном случае `C:\Zapret-main\start1.cmd`)_:
 
 ```cmd
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v Zapret /t REG_SZ /d "C:\Zapret-main\start1.cmd" /f
