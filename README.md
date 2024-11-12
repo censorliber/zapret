@@ -124,7 +124,7 @@ reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v Zapret /t REG_SZ
 
 ----------------
 
-### По всем вопросам обращаться в группу https://t.me/youtubenotwork
+### По всем вопросам обращаться в группу https://t.me/youtubenotwork или https://discord.gg/JGVgTefCjM
 ### Другие полезные сервисы и VPN https://github.com/awesome-windows11/CensorNet
 > [!CAUTION]  
 > При любых ошибках просьба **ВСЕГДА** оставляйте скриншот и изображение ошибки, не описывайте их на словах, так Вам нельзя будет помочь, так как не понятно что за проблема.
