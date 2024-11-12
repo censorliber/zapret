@@ -55,6 +55,8 @@ network.http.http3.retry_different_ip_family
 157.240.205.63 scontent-hel3-1.cdninstagram.com
 104.21.32.39 rutracker.org
 172.67.182.196 rutracker.org
+116.202.120.184 torproject.org
+116.202.120.184 bridges.torproject.org
 ```
 
 Либо на (_предыдущий вариант удалите_):
@@ -71,6 +73,8 @@ network.http.http3.retry_different_ip_family
 157.240.205.63 scontent-hel3-1.cdninstagram.com
 104.21.32.39 rutracker.org
 172.67.182.196 rutracker.org
+116.202.120.184 torproject.org
+116.202.120.184 bridges.torproject.org
 ```
 
 ## 2. Частые ошибки
