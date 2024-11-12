@@ -95,7 +95,7 @@ network.http.http3.retry_different_ip_family
 Запустите данную команду из консоли, где следует указать необходимый `cmd` файл (_в данном случае `C:\Zapret-main\start1.cmd`)_:
 
 ```cmd
-reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v YTDisBystro /t REG_SZ /d "C:\Zapret-main\start1.cmd" /f
+reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v Zapret /t REG_SZ /d "C:\Zapret-main\start1.cmd" /f
 ```
 
 ## 5. О вирусах
