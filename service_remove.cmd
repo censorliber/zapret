@@ -1,10 +1,19 @@
-call :srvdel zapret
-rem call :srvdel zapret2
-goto :eof
+@echo off
+chcp 65001 >nul
+:: 65001 - UTF-8
 
-:srvdel
-net stop %1
-sc delete %1
+set "arg=%1"
+if "%arg%" == "admin" (
+    echo Restarted with admin rights
+) else (
+    powershell -Command "Start-Process 'cmd.exe' -ArgumentList '/k \"%~f0 admin\"' -Verb RunAs"
+    exit /b
+)
+
+set SRVCNAME=zapret
+
+net stop %SRVCNAME%
+sc delete %SRVCNAME%
 
 net stop "WinDivert"
 sc delete "WinDivert"
