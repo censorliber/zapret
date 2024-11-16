@@ -149,6 +149,11 @@ reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v Zapret /t REG_SZ
 - SHA-1 `61716de8152bd3a59378a6cd11f6b07988a549d5`
 - SHA-256 `0453fce6906402181dbff7e09b32181eb1c08bb002be89849e8992b832f43b89`
 
+Версия [v68](https://www.virustotal.com/gui/file/c26719336725fda6d48815582acee198c0d7d4f6a6f9f73b5e0d58ca19cfbe35/detection)
+- MD5 `c36c5c34d612ffc684047b7c87310a1f`
+- SHA-1 `5b9a89d08554f911e93665a3910ff16db33bf1ce`
+- SHA-256 `c26719336725fda6d48815582acee198c0d7d4f6a6f9f73b5e0d58ca19cfbe35`
+
 ----------------
 
 ### По всем вопросам обращаться в группу https://t.me/youtubenotwork или https://discord.gg/JGVgTefCjM
