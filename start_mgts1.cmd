@@ -10,4 +10,3 @@ start "zapret: http,https,quic,discord" /min "%~dp0winws.exe" ^
 --filter-udp=50000-50020 --dpi-desync=fake,split2 --dpi-desync-any-protocol --dpi-desync-cutoff=d2 --dpi-desync-fake-quic="%~dp0quic_test_00.bin" --new ^
 --filter-tcp=443 --hostlist="%~dp0russia-discord.txt" --dpi-desync=split --dpi-desync-split-pos=1 --dpi-desync-fooling=badseq --dpi-desync-repeats=10 --dpi-desync-ttl=4 --new ^
 --filter-tcp=443 --hostlist="%~dp0other.txt" --dpi-desync=fake,split2 --dpi-desync-split-seqovl=1 --dpi-desync-split-tls=sniext --dpi-desync-fake-tls="%~dp0tls_clienthello_2.bin" --dpi-desync-ttl=2 --new ^
---filter-tcp=443 --hostlist-auto="%~dp0autohostlist.txt" --hostlist-exclude="%~dp0netrogat.txt" --dpi-desync=split --dpi-desync-split-pos=1 --dpi-desync-fooling=badseq --dpi-desync-repeats=10 --dpi-desync-ttl=4
