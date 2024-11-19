@@ -11,4 +11,3 @@ start "zapret: http,https,quic,discord" /min "%~dp0winws.exe" ^
 --filter-tcp=443 --hostlist="%~dp0other.txt" --dpi-desync=fake,split2 --dpi-desync-split-seqovl=1 --dpi-desync-split-tls=sniext --dpi-desync-fake-tls="%~dp0tls_clienthello_www_google_com.bin" --dpi-desync-ttl=2 --new ^
 --filter-tcp=443 --hostlist="%~dp0faceinsta.txt" --dpi-desync=split2 --dpi-desync-split-seqovl=652 --dpi-desync-split-pos=2 --dpi-desync-split-seqovl-pattern="%~dp0tls_clienthello_www_google_com.bin" --new ^
 --filter-tcp=443 --hostlist="%~dp0russia-discord.txt" --dpi-desync=fake,split2 --dpi-desync-split-seqovl=1 --dpi-desync-split-tls=sniext --dpi-desync-fake-tls="%~dp0tls_clienthello_www_google_com.bin" --dpi-desync-autottl=2 --new ^
---dpi-desync=fake,split2 --hostlist-auto="%~dp0autohostlist.txt" --dpi-desync-fooling=md5sig --dpi-desync-fake-tls="%~dp0tls_clienthello_www_google_com.bin" --dpi-desync-autottl=2 
