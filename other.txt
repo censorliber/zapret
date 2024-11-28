@@ -27,3 +27,4 @@ googleads.g.doubleclick.net
 static.doubleclick.net
 cdn.vigo.one
 republic.ru
+news.google.com
