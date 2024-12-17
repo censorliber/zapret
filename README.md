@@ -69,6 +69,12 @@ network.http.http3.retry_different_ip_family
 116.202.120.184 torproject.org
 116.202.120.184 bridges.torproject.org
 116.202.120.166 community.torproject.org
+162.159.152.4 medium.com
+172.67.182.196 rutracker.org
+188.114.96.1 dept.one
+142.250.185.238 youtube.com
+142.250.186.110 www.youtube.com
+130.255.77.28 ntc.party
 ```
 
 Либо на какой-то из примеров ниже (_предыдущий вариант удалите_):
@@ -89,6 +95,12 @@ network.http.http3.retry_different_ip_family
 116.202.120.184 torproject.org
 116.202.120.184 bridges.torproject.org
 116.202.120.166 community.torproject.org
+162.159.152.4 medium.com
+172.67.182.196 rutracker.org
+188.114.96.1 dept.one
+142.250.185.238 youtube.com
+142.250.186.110 www.youtube.com
+130.255.77.28 ntc.party
 ```
 
 ```
@@ -109,6 +121,12 @@ network.http.http3.retry_different_ip_family
 116.202.120.184 torproject.org
 116.202.120.184 bridges.torproject.org
 116.202.120.166 community.torproject.org
+162.159.152.4 medium.com
+172.67.182.196 rutracker.org
+188.114.96.1 dept.one
+142.250.185.238 youtube.com
+142.250.186.110 www.youtube.com
+130.255.77.28 ntc.party
 ```
 
 ### 1.4 Сборки Windows
