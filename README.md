@@ -136,8 +136,6 @@ network.http.http3.retry_different_ip_family
 > [!TIP]  
 > Автор KDS. Его оригинальный [архив сборок](https://ntc.party/t/ytdisbystro-%D0%B0%D1%80%D1%85%D0%B8%D0%B2-%D0%B2%D1%81%D0%B5%D1%85-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B9/12582)
 
-<div align='center'><a href='https://www.websitecounterfree.com'><img src='https://www.websitecounterfree.com/c.php?d=9&id=60326&s=1' border='0' alt='Free Website Counter'></a><br / ><small></small></div>
-
 Ошибка ниже говорит о том что Вы не разархивировали zip архив через встроенные средства Windows или 7zip.
 
 ![image](https://github.com/user-attachments/assets/09a9c77e-c45b-408a-99b4-21899643cf7a)
@@ -192,3 +190,5 @@ reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v Zapret /t REG_SZ
 - MD5 `c36c5c34d612ffc684047b7c87310a1f`
 - SHA-1 `5b9a89d08554f911e93665a3910ff16db33bf1ce`
 - SHA-256 `c26719336725fda6d48815582acee198c0d7d4f6a6f9f73b5e0d58ca19cfbe35`
+
+<div align='center'><a href='https://www.websitecounterfree.com'><img src='https://www.websitecounterfree.com/c.php?d=9&id=60326&s=1' border='0' alt='Free Website Counter'></a><br / ><small></small></div>
