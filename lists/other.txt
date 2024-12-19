@@ -31,3 +31,4 @@ cdn.vigo.one
 republic.ru
 news.google.com
 viber.com
+signal.org
