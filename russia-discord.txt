@@ -1,5 +1,10 @@
 discord.com
 discord.gg
+discord.dev
+discord.new
+discord.gift
+discord.co
+dis.gd
 discordapp.com
 discordapp.net
 discord.media
