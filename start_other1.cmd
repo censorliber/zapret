@@ -1,3 +1,14 @@
+@echo off
+
+tasklist /fi "imagename eq winws.exe" | find /i "winws.exe" > NUL 2>&1
+if %errorlevel% equ 0 (
+    echo The Zapret process is already running. Close the OTHER windows and services and try to run this program again.
+    echo The Zapret process is already running. Close the OTHER windows and services and try to run this program again.
+    echo The Zapret process is already running. Close the OTHER windows and services and try to run this program again.
+    pause
+    exit
+)
+
 start "zapret: http,https,quic" /min "%~dp0\bin\winws.exe" ^
 --wf-l3=ipv4,ipv6 --wf-tcp=443 --wf-udp=443,50000-65535 ^
 --filter-udp=443 --hostlist="%~dp0lists\youtube.txt" --dpi-desync=fake --dpi-desync-repeats=11 --dpi-desync-fake-quic="%~dp0bin\quic_initial_www_google_com.bin" --new ^
