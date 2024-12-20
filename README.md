@@ -1,6 +1,6 @@
 <h1 align="center"><img src="https://i.imgur.com/uABXHHI.png" width="30px"></img> <a href="https://github.com/bol-van/zapret">Zapret</a> (Запрет: обход блокировки Дискорда и Ютуба) </h1>
 
-1. Скачать по ссылке https://github.com/censorliber/zapret/archive/refs/tags/5.1.zip ([зеркало](https://t.me/bypassblock/133))
+1. Скачать по ссылке https://github.com/censorliber/zapret/archive/refs/tags/5.2.zip ([зеркало](https://t.me/bypassblock/133))
 2. **Обязательно разархивировать проект из ZIP файла! _(создать новую папку)_**
 3. Начните с первой стратегии и запустите файл под именем **`start1.cmd`**
 4. Если это не помогло (_или у вас не МГТС_), то попробуйте загрузить любой из **`.cmd`** файлов по порядку. При этом **ОБЯЗАТЕЛЬНО перезагружайте приложение Discord/страницу/браузер** и подождите хотя бы 10-15 секунд пока сайт загрузится.
