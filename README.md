@@ -77,9 +77,6 @@ about:preferences#privacy
 ```
 
 ### 1.3. Настройки файла hosts
-> [!WARNING]  
-> ПРОВЕРЬТЕ ЧТОБЫ по адресу `about://settings/security` DNS DOH В БРАУЗЕРЕ БЫЛ **ВЫКЛЮЧЕН**! В ДАННЫЙ МОМЕНТ ЭТОЙ НАСТРОЙКИ **НЕ** ТРЕБУЕТСЯ!
-
 В файл `C:\Windows\System32\drivers\etc\hosts` пропишите следующее содержание (_рекомендуется использовать [`Notepad++`](https://github.com/notepad-plus-plus/notepad-plus-plus/releases), ссылка на оф. сайт была заблокирована_):
 
 ```
