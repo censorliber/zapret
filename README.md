@@ -77,9 +77,6 @@ about:preferences#privacy
 ```
 
 ### 1.3. Настройки файла hosts
-> [!WARNING]  
-> ПРОВЕРЬТЕ ЧТОБЫ по адресу `about://settings/security` DNS DOH В БРАУЗЕРЕ БЫЛ **ВЫКЛЮЧЕН**! В ДАННЫЙ МОМЕНТ ЭТОЙ НАСТРОЙКИ **НЕ** ТРЕБУЕТСЯ!
-
 В файл `C:\Windows\System32\drivers\etc\hosts` пропишите следующее содержание (_рекомендуется использовать [`Notepad++`](https://github.com/notepad-plus-plus/notepad-plus-plus/releases), ссылка на оф. сайт была заблокирована_):
 
 ```
@@ -216,6 +213,8 @@ reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v Zapret /t REG_SZ
 > [!CAUTION]
 > ### Вирусная копия Zapret!
 > Телеграм канал `peekbot` начал распространять [вирусы](https://github.com/Flowseal/zapret-discord-youtube/issues/794) под предлогом Zapret. Будьте внимательны! Также у них имеется вредоносный сайт `https://gitrok.com`!
+>
+> В папке висит вирусный **cygwin.exe** который весит свыше 13 МБ. Такие [большие файлы](https://www.virustotal.com/gui/file/5591f24e96ed8d2877ac056955f5aaeb45fab792f1b35d635ae4a961c7000e26/detection) никогда не находились в оригинальном Zapret.
 
 Вирусов в программе нет. Данное творение создано с открытым исходным кодом, и Вы можете собрать его самостоятельно. В данном случае на программу ругаются неизвестные китайские вирусы, а также 360 Total Security, который является китайским и не заслуживает доверия. Все американские антивирусы молчат.
 
