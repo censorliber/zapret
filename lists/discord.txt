@@ -6,6 +6,7 @@ discord.gift
 discord.co
 dis.gd
 discordapp.com
+discordapp.io
 discordapp.net
 discord.media
 discordcdn.com
