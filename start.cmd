@@ -72,7 +72,7 @@ echo 30. Ультимейт конфиг v2 (любые провайдеры)
 echo.
 echo.
 echo 91. Сменить DNS на Google DNS (помогает если Вы этого ещё не сделали)
-echo 92. Отредактировать файл hosts (помогает разблокировать Instragram, Facebook, Twitter)
+echo 92. Отредактировать файл hosts (помогает разблокировать Instagram, Facebook, Twitter и т.д.)
 echo.
 echo.
 set /p "user_input=Введите цифру: "
@@ -452,7 +452,7 @@ echo Файл hosts успешно обновлён.
 exit /b
 
 :TELEGRAM
-set "reg_key=HKCU\Software\MyScripts\Telegram"
+set "reg_key=HKCU\Software\Zapret"
 set "reg_value=TelegramOpened"
 
 reg query "%reg_key%" /v "%reg_value%" > nul 2>&1
