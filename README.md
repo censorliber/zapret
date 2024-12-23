@@ -1,6 +1,6 @@
 <h1 align="center"><img src="https://i.imgur.com/uABXHHI.png" width="30px"></img> <a href="https://github.com/bol-van/zapret">Zapret</a> (Запрет: обход блокировки Дискорда и Ютуба) </h1>
 
-1. Скачать по ссылке https://github.com/censorliber/zapret/archive/refs/tags/6.0.1.zip
+1. Скачать по ссылке https://github.com/censorliber/zapret/archive/refs/tags/6.0.2.zip
 2. **Обязательно разархивировать проект из ZIP файла! _(создать новую папку)_**
 3. Запустите файл **`start.cmd`**
 4. Пробуйте различные стратегии (набрав необходимую цифру и после пробел) для обходка блокировок.
@@ -9,6 +9,8 @@
 7. НЕ ЗАКРЫВАЙТЕ ФЛАГ КОНСОЛИ `windivert initialized. capture is started`, так как данная надпись означает что Zapret успешно запущен
 
 **Не используйте приложение Discord, вместо этого подключайтесь по ссылке https://discord.com/channels/@me**!!
+
+![image](https://github.com/user-attachments/assets/18b88db5-913a-4cf9-a103-4a43c1160a8f)
 
 ## 1. Перед тем как использовать
 > [!CAUTION]  
