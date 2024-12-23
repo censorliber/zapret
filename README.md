@@ -14,7 +14,7 @@
 > [Касперский](https://github.com/bol-van/zapret/issues/611) и иные российские вирусы начали войну с запретами и иными средствами обхода блокировок. Чтобы использовать их спокойно рекомендуется перейти на альтернативные американские антивирусы (Defender, ESET32 и т.д.), которые не выдают ложные и обманчивые срабатывания и помогают от большего количества угроз.
 
 > [!CAUTION]  
-> [Яндекс DNS](https://t.me/bypassblock/134) перестали открывать Discord и другие заблокированные сайты. Не пользуйтесь ими. Рекомендуем сменить их ([ИНСТРУКЦИЯ КАК ЭТО СДЕЛАТЬ](https://github.com/censorliber/censorliber/blob/main/dns.md)) на [**Google DNS**](https://developers.google.com/speed/public-dns) или [**Quad9 DNS**](https://quad9.net/service/service-addresses-and-features).
+> [Яндекс DNS](https://t.me/bypassblock/134) перестали открывать Discord и другие заблокированные сайты. Не пользуйтесь ими. Рекомендуем сменить их на [**Google DNS**](https://developers.google.com/speed/public-dns) или [**Quad9 DNS**](https://quad9.net/service/service-addresses-and-features).
 
 > [!WARNING]
 > Если у вас вылетает батник при открытии всех cmd файлов - скорее всего Zapret был запущен из под другой папки или пользователя. Следует перезагрузить компьютер и попробовать запустить его ещё раз. Если это не помогло - Вам следует проверить наличие других программ Zapret в других папках, которые Вы могли скачать ранее.
