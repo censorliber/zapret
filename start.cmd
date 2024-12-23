@@ -373,8 +373,21 @@ if %errorlevel% equ 0 (
     echo "Попытка запуска стратегии..."
 )
 
+tasklist /fi "imagename eq goodbyedpi.exe" | find /i "goodbyedpi.exe" > NUL 2>&1
+if %errorlevel% equ 0 (
+    echo "ГУДБАЙДИПИАЙ НЕ РАБОТАЕТ С ZAPRET!!!"
+    taskkill /f /im winws.exe > NUL 2>&1
+    sc stop "GoodbyeDPI"
+    sc delete "GoodbyeDPI"
+) else (
+    echo.
+)
+
 TIMEOUT /T 1 > nul /NOBREAK
-sc stop windivert > nul
+sc stop "WinDivert"
+sc delete "WinDivert"
+sc stop "WinDivert14"
+sc delete "WinDivert14"
 exit /b
 
 
