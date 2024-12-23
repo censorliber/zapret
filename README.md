@@ -1,6 +1,6 @@
 <h1 align="center"><img src="https://i.imgur.com/uABXHHI.png" width="30px"></img> <a href="https://github.com/bol-van/zapret">Zapret</a> (Запрет: обход блокировки Дискорда и Ютуба) </h1>
 
-1. Скачать по ссылке https://github.com/censorliber/zapret/archive/refs/tags/6.1.zip
+1. Скачать по ссылке https://github.com/censorliber/zapret/archive/refs/tags/6.0.1.zip
 2. **Обязательно разархивировать проект из ZIP файла! _(создать новую папку)_**
 3. Запустите файл **`start.cmd`**
 4. Пробуйте различные стратегии (набрав необходимую цифру и после пробел) для обходка блокировок.
