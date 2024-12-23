@@ -457,7 +457,7 @@ set "reg_value=TelegramOpened"
 
 reg query "%reg_key%" /v "%reg_value%" > nul 2>&1
 if %errorlevel% == 0 (
-    echo Присоединяйтесь к нашему каналу Telegram https://t.me/bypassblock
+    echo "Присоединяйтесь к нашему каналу Telegram (для обновлений) https://t.me/bypassblock"
 ) else (
     echo Присоединяйтесь к нашему каналу Telegram
     start https://t.me/bypassblock
