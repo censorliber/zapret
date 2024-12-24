@@ -321,6 +321,8 @@ rem set YTDB_DIS3=--dpi-desync=fake --dpi-desync-any-protocol --dpi-desync-cutof
 rem set YTDB_DIS3=--dpi-desync=fake --dpi-desync-any-protocol --dpi-desync-fake-unknown-udp=0xC30000000108 --dpi-desync-cutoff=n2
 rem set YTDB_DIS3=[�� ������ �������� ���� ���� ��������� (�����)]
 
+
+call :CHECK_AND_STOP & set STRATEGY_STARTED=1
 start "---] zapret: http,https,quic,youtube,discord [---" /min "%~dp0bin\winws.exe" %YTDB_prog_log% ^
 --wf-tcp=80,443 --wf-udp=443,50000-50090 ^
 --filter-tcp=443 --ipset="%~dp0lists\russia-youtube-rtmps.txt" --dpi-desync=syndata --dpi-desync-fake-syndata="%~dp0bin\tls_clienthello_4.bin" --dpi-desync-autottl --new ^
@@ -358,7 +360,7 @@ start "STRATEGY3" /min "%BIN%winws.exe" ^
 --filter-tcp=443 --hostlist="%LISTS%discord.txt" --dpi-desync=fake,split --dpi-desync-repeats=6 --dpi-desync-fooling=badseq --dpi-desync-fake-tls="%BIN%tls_clienthello_www_google_com.bin" -- new ^
 --filter-udp=443 --hostlist="%LISTS%youtube.txt" --dpi-desync=fake --dpi-desync-repeats=2 --dpi-desync-cutoff=n2 --dpi-desync-fake-quic="%BIN%quic_test_00.bin" --new ^
 --filter-tcp=443 --hostlist="%LISTS%youtube.txt" --dpi-desync=split --dpi-desync-split-pos=1 --dpi-desync-fooling=badseq --dpi-desync-repeats=10 --dpi-desync-cutoff=d2 --dpi-desync-ttl=4 --new ^
---filter-tcp=443 --hostlist="%LISTS%youtube.txt" --dpi-desync=fake,split2 --dpi-desync-split-seqovl=2 --dpi-desync-split-pos=3 ^
+--filter-tcp=443 --hostlist="%LISTS%youtube.txt" --dpi-desync=fake,split2 --dpi-desync-split-seqovl=2 --dpi-desync-split-pos=3 --new ^
 --filter-tcp=443 --hostlist="%LISTS%other.txt" --dpi-desync=fake,split2 --dpi-desync-split-seqovl=1 --dpi-desync-split-tls=sniext --dpi-desync-fake-tls="%BIN%tls_clienthello_2.bin" --dpi-desync-ttl=2 --new ^
 TIMEOUT /T 1 > nul /NOBREAK & echo "Стратегия v3 успешно загружена!" & goto MENU
 
