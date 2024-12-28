@@ -1,7 +1,7 @@
 <h1 align="center"><img src="https://i.imgur.com/uABXHHI.png" width="30px"></img> <a href="https://github.com/bol-van/zapret">Zapret</a> (Запрет: обход блокировки Дискорда и Ютуба) </h1>
 
 1. Скачать 7zip (если ещё не установлен) https://7-zip.org/a/7z2409-x64.exe
-2. Скачать по ссылке https://github.com/censorliber/zapret_binary/raw/refs/heads/main/zapret6_2_1.7z
+2. Скачать по ссылке https://github.com/censorliber/zapret_binary/raw/refs/heads/main/zapret6_2_3.7z
 3. **Обязательно разархивировать проект из ZIP файла! _(создать новую папку)_**
 4. Запустите файл **`start.bat`**
 5. Пробуйте различные стратегии (набрав необходимую цифру и после пробел) для обходка блокировок.
@@ -11,17 +11,14 @@
 
 **Не используйте приложение Discord, вместо этого подключайтесь по ссылке https://discord.com/channels/@me**!!
 
-![image](https://github.com/user-attachments/assets/75a1a555-0921-49d5-a089-9a15b73b078c)
+![image](https://github.com/user-attachments/assets/3b52ddd1-ee0c-4c58-bab1-ffa6202e172c)
 
 ## 1. Перед тем как использовать
 > [!CAUTION]  
 > [Касперский](https://github.com/bol-van/zapret/issues/611) и иные российские вирусы начали войну с запретами и иными средствами обхода блокировок. Чтобы использовать их спокойно рекомендуется перейти на альтернативные американские антивирусы (Defender, ESET32 и т.д.), которые не выдают ложные и обманчивые срабатывания и помогают от большего количества угроз.
 
 > [!CAUTION]  
-> [Яндекс DNS](https://t.me/bypassblock/134) перестали открывать Discord и другие заблокированные сайты. Не пользуйтесь ими. Рекомендуем сменить их на [**Google DNS**](https://developers.google.com/speed/public-dns) или [**Quad9 DNS**](https://quad9.net/service/service-addresses-and-features).
-
-> [!WARNING]
-> Если у вас вылетает батник при открытии всех cmd файлов - скорее всего Zapret был запущен из под другой папки или пользователя. Следует перезагрузить компьютер и попробовать запустить его ещё раз. Если это не помогло - Вам следует проверить наличие других программ Zapret в других папках, которые Вы могли скачать ранее.
+> [Яндекс DNS](https://t.me/bypassblock/134) перестали открывать Discord и другие заблокированные сайты. Не пользуйтесь ими. Рекомендуем сменить их на [**Google DNS**](https://developers.google.com/speed/public-dns) или [**Quad9 DNS**](https://quad9.net/service/service-addresses-and-features). Программа быстро позволяет Вам это сделать (опции `92` и `93`)
 
 ### 1.1. Chromium браузеры
 Все конфиги представленные ниже работают Chromium подобных браузерах (Chrome, Vivaldi и т.д.). Поэтому рекомендуем переключиться на них. **Никакие флаги переключать там не нужно, всё оставляем по умолчанию!**
