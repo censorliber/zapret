@@ -190,6 +190,32 @@ function Check-YouTube {
         }
     }
 }
+
+function Check-Update {
+    # Путь к локальному файлу
+    $localFilePath = "$PSScriptRoot/core.ps1"
+
+    # URL файла с хэш-суммой
+    $hashUrl = "https://raw.githubusercontent.com/censorliber/zapret/refs/heads/main/core.ps1"
+
+    try {
+        # Вычисляем хэш-сумму локального файла
+        $localFileHash = (Get-FileHash -Algorithm SHA256 $localFilePath).Hash
+
+        # Загружаем хэш-сумму с сервера
+        $serverFileHash = (Invoke-WebRequest -Uri $hashUrl).Content.Trim()
+
+        # Сравниваем хэш-суммы
+        if ($localFileHash -ne $serverFileHash) {
+            Write-Host "!!!!!!!!!!!! Доступно обновление !!!!!!!!!!!!!!!!!!!!!!!!!"
+        } else {
+            Write-Host "У вас установлена последняя версия."
+        }
+    } catch {
+        Write-Host "Ошибка при проверке обновлений: $_"
+    }
+}
+
 function Show-Telegram {
     $regKey = "HKCU:\Software\Zapret"
     $regValue = "TelegramOpened"
@@ -207,6 +233,7 @@ function Show-Telegram {
 
 #region - Telegram
 Show-Telegram
+Check-Update
 #endregion
 
 Write-Host "ВНИМАНИЕ: Вы должны распаковать ZIP архив перед использованием!"
