@@ -1,4 +1,5 @@
 cloudflare-ech.com
+onlinesim.io
 ntc.party
 bbc.com
 dtf.ru
@@ -34,3 +35,5 @@ viber.com
 signal.org
 hrw.org
 animego.org
+escapefromtarkov.com
+quora.com
