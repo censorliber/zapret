@@ -1,7 +1,7 @@
 <h1 align="center"><img src="https://i.imgur.com/uABXHHI.png" width="30px"></img> <a href="https://github.com/bol-van/zapret">Zapret</a> (Запрет: обход блокировки Дискорда и Ютуба) </h1>
 
 1. Скачать 7zip (если ещё не установлен) https://7-zip.org/a/7z2409-x64.exe
-2. Скачать по ссылке https://github.com/censorliber/zapret_binary/raw/refs/heads/main/zapret6_2_4.7z
+2. Скачать по ссылке https://github.com/censorliber/zapret_binary/raw/refs/heads/main/zapret6.2.5.7z
 3. **Обязательно разархивировать проект из ZIP файла! _(создать новую папку)_**
 4. Запустите файл **`start.bat`**
 5. Пробуйте различные стратегии (набрав необходимую цифру и после пробел) для обходка блокировок.
