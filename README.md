@@ -11,7 +11,7 @@
 
 **Не используйте приложение Discord, вместо этого подключайтесь по ссылке https://discord.com/channels/@me**!!
 
-![image](https://github.com/user-attachments/assets/75a1a555-0921-49d5-a089-9a15b73b078c)
+![image](https://github.com/user-attachments/assets/3b52ddd1-ee0c-4c58-bab1-ffa6202e172c)
 
 ## 1. Перед тем как использовать
 > [!CAUTION]  
