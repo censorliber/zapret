@@ -162,7 +162,7 @@ about:preferences#privacy
 Если у Вас ну никак не работает Zapret - поставьте чистую Windows, например [LTSC](https://windows64.net/398-windows-10-x64-ltsc-21h2-s-aktivatorom-na-russkom.html). 
 
 ## 2. Частые ошибки
-### По всем вопросам обращаться в группу https://t.me/youtubenotwork или https://discord.gg/JGVgTefCjM
+### По всем вопросам обращаться в группу https://t.me/youtubenotwork или https://discord.gg/kkcBDG2uws
 ### Другие полезные сервисы и VPN https://github.com/awesome-windows11/CensorNet
 > [!CAUTION]  
 > При любых ошибках просьба **ВСЕГДА** оставляйте скриншот и изображение ошибки.
