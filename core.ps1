@@ -183,7 +183,7 @@ function Check-YouTube {
         Write-Output "Запрос успешен: $($response.StatusCode)"
     } catch {
         if ($_.Exception.Response.StatusCode -eq 403) {
-            Write-Output "Ошибка 403: ВЫ НЕ СМОЖЕТЕ СМОТРЕТЬ ЮТУБ ЧЕРЕЗ ZAPRET! Вам следует скачать Freetube и/или смотреть ссылки через embed, вот пример: https://www.youtube.com/embed/0e3GPea1Tyg"
+            Write-Output "Ошибка 403: ВЫ НЕ СМОЖЕТЕ СМОТРЕТЬ ЮТУБ ЧЕРЕЗ ZAPRET! Вам следует скачать Freetube по ссылке freetubeapp.io и/или смотреть ссылки через embed, вот пример: https://www.youtube.com/embed/0e3GPea1Tyg"
         } else {
             Write-Output $($_.Exception.Message)
             Write-Output "Если Вы видите ошибки 404, то Вы успешно сможете разблокировать YouTube через Zapret!"
