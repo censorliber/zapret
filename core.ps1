@@ -138,7 +138,7 @@ function Set-GoogleDNS {
     Write-Host "Все интерфейсы успешно обновлены."
 }
 
-function Set-ZapretDNS{
+function Set-ZapretDNS {
     $primaryDNS = "185.222.222.222"
     $secondaryDNS = "45.11.45.11"
 
@@ -177,6 +177,19 @@ function Edit-Hosts {
     Write-Host "Файл hosts успешно обновлён."
 }
 
+function Check-YouTube {
+    try {
+        $response = Invoke-WebRequest -Uri "https://jnn-pa.googleapis.com" -Method GET
+        Write-Output "Запрос успешен: $($response.StatusCode)"
+    } catch {
+        if ($_.Exception.Response.StatusCode -eq 403) {
+            Write-Output "Ошибка 403: ВЫ НЕ СМОЖЕТЕ СМОТРЕТЬ ЮТУБ ЧЕРЕЗ ZAPRET! Вам следует скачать Freetube и/или смотреть ссылки через embed, вот пример: https://www.youtube.com/embed/0e3GPea1Tyg"
+        } else {
+            Write-Output $($_.Exception.Message)
+            Write-Output "Если Вы видите ошибки 404, то Вы успешно сможете разблокировать YouTube через Zapret!"
+        }
+    }
+}
 function Show-Telegram {
     $regKey = "HKCU:\Software\Zapret"
     $regValue = "TelegramOpened"
@@ -230,9 +243,10 @@ Write-Host "30. Ультимейт конфиг ZL (разблокирует л�
 Write-Host "31. Ультимейт конфиг v2 (разблокирует любые сайты, любые провайдеры)"
 Write-Host ""
 Write-Host ""
-Write-Host "90. Сменить DNS на Google DNS (помогает если Вы этого ещё не сделали)"
-Write-Host "91. Сменить DNS на DNS от Запрета"
-Write-Host "92. Отредактировать файл hosts (помогает разблокировать Instagram, Facebook, Twitter и т.д.)"
+Write-Host "91 Проверить работу YouTube глобально! (если никакие стратегии не помогают)"
+Write-Host "92. Сменить DNS на Google DNS (помогает если Вы этого ещё не сделали)"
+Write-Host "93. Сменить DNS на DNS от Запрета"
+Write-Host "94. Отредактировать файл hosts (помогает разблокировать Instagram, Facebook, Twitter и т.д.)"
 Write-Host ""
 Write-Host ""
 
@@ -308,13 +322,16 @@ do {
             
             Invoke-ZapretStrategy -StrategyName "Ultimate Config v2" -Arguments "$YTDB_prog_log --wf-tcp=80,443 --wf-udp=443,50000-50090 --filter-tcp=443 --ipset=""$LISTS\russia-youtube-rtmps.txt"" --dpi-desync=syndata --dpi-desync-fake-syndata=""$BIN\tls_clienthello_4.bin"" --dpi-desync-autottl --new --filter-udp=443 --hostlist=""$LISTS\youtubeQ.txt"" --dpi-desync=fake,udplen --dpi-desync-udplen-increment=2 --dpi-desync-fake-quic=""$BIN\quic_3.bin"" --dpi-desync-cutoff=n3 --dpi-desync-repeats=2 --new --filter-tcp=443 --hostlist=""$LISTS\youtube.txt"" $YTDB_YTPot --new --filter-tcp=80 --hostlist=""$LISTS\other.txt"" --dpi-desync=fake,multisplit --dpi-desync-fooling=md5sig --dpi-desync-autottl --new --filter-tcp=443 --hostlist=""$LISTS\other.txt"" --dpi-desync=fake,multisplit --dpi-desync-split-seqovl=1 --dpi-desync-split-pos=midsld-1 --dpi-desync-fooling=md5sig,badseq --dpi-desync-fake-tls=""$BIN\tls_clienthello_4.bin"" --dpi-desync-autottl --new --filter-tcp=443 $YTDB_DIS1 --new --filter-udp=443 $YTDB_DIS2 --new --filter-udp=50000-50090 $YTDB_DIS3 --new --filter-tcp=443 $YTDB_WinSZ"
         }
-        "90" {
-            Set-GoogleDNS
-        }
         "91" {
-            Set-ZapretDNS
+            Check-YouTube
         }
         "92" {
+            Set-GoogleDNS
+        }
+        "93" {
+            Set-ZapretDNS
+        }
+        "94" {
             Edit-Hosts
         }
         default {
