@@ -20,7 +20,7 @@ Write-Host ""
 
 $BIN = "$PSScriptRoot\bin\"
 $LISTS = "$PSScriptRoot\lists\"
-$localVersion = "6.3.1"
+$localVersion = "6.3.2"
 
 function Test-Administrator {
     $identity = [System.Security.Principal.WindowsIdentity]::GetCurrent()
@@ -34,6 +34,52 @@ if (!(Test-Administrator)) {
     exit
 }
 Write-Host "Запуск прошёл успешно..."
+
+function Check-AndDownload-WinDivert {
+    $driverName = "WinDivert.dll"
+    $exeName = "winws.exe"
+
+    $driverRawUrl = "https://github.com/bol-van/zapret-win-bundle/raw/refs/heads/master/zapret-winws/WinDivert.dll"
+    $exeRawUrl = "https://github.com/bol-van/zapret-win-bundle/raw/refs/heads/master/zapret-winws/winws.exe"
+
+    # Проверяем наличие папки bin
+    if (-not (Test-Path -Path $BIN)) {
+        Write-Host "Папка bin не найдена. Создаю..."
+        New-Item -ItemType Directory -Path $BIN | Out-Null
+    }
+
+    # Проверяем наличие драйвера
+    $driverPath = Join-Path -Path $BIN -ChildPath $driverName
+    if (-not (Test-Path -Path $driverPath)) {
+        Write-Host "Драйвер $driverName не найден. Скачиваю..."
+        try {
+            Invoke-WebRequest -Uri $driverRawUrl -OutFile $driverPath
+            Write-Host "Драйвер $driverName успешно скачан."
+        } catch {
+            Write-Error "Ошибка при скачивании драйвера: $_"
+            return # Прерываем выполнение функции в случае ошибки
+        }
+    } else {
+        Write-Host "Драйвер $driverName найден."
+    }
+
+    # Проверяем наличие исполняемого файла
+    $exePath = Join-Path -Path $BIN -ChildPath $exeName
+    if (-not (Test-Path -Path $exePath)) {
+        Write-Host "Исполняемый файл $exeName не найден. Скачиваю..."
+        try {
+            Invoke-WebRequest -Uri $exeRawUrl -OutFile $exePath
+            Write-Host "Исполняемый файл $exeName успешно скачан."
+        } catch {
+            Write-Error "Ошибка при скачивании исполняемого файла: $_"
+            return # Прерываем выполнение функции в случае ошибки
+        }
+    } else {
+        Write-Host "Исполняемый файл $exeName найден."
+    }
+}
+
+Check-AndDownload-WinDivert
 
 function Invoke-ZapretStrategy {
     param(
@@ -91,7 +137,19 @@ function Stop-Zapret {
     }
     
     Start-Sleep -Seconds 1
-    Stop-Service -Name "WinDivert" -Force -ErrorAction SilentlyContinue
+    try {
+        Stop-Service -Name "WinDivert" -Force -ErrorAction SilentlyContinue
+    } catch {
+        Write-Host "Не удалось остановить службу WinDivert. Возможно, она не установлена."
+        # Дополнительные действия по обработке ошибки, например:
+        # - Проверка, установлена ли служба вообще:
+        if (Get-Service "WinDivert" -ErrorAction SilentlyContinue) {
+            Write-Host "Служба установлена, но возникла ошибка при её остановке."
+        } else {
+            Write-Host "Служба WinDivert не найдена."
+        }
+    }
+
     Stop-Service -Name "WinDivert14" -Force -ErrorAction SilentlyContinue
     Remove-Item -Path "HKLM:\SYSTEM\CurrentControlSet\Services\WinDivert" -Recurse -Force -ErrorAction SilentlyContinue
     Remove-Item -Path "HKLM:\SYSTEM\CurrentControlSet\Services\WinDivert14" -Recurse -Force -ErrorAction SilentlyContinue
