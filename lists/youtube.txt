@@ -16,3 +16,7 @@ yt-video-upload.l.google.com
 wide-youtube.l.google.com
 play.google.com
 accounts.google.com
+youtubekids.com
+7tv.app
+7tv.io
+10tv.app
