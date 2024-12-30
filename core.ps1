@@ -53,6 +53,7 @@ function Check-AndDownload-WinDivert {
     if (-not (Test-Path -Path $driverPath)) {
         Write-Host "Драйвер $driverName не найден. Скачиваю..."
         try {
+            Start-Sleep -Seconds 3
             Invoke-WebRequest -Uri $driverRawUrl -OutFile $driverPath
             Write-Host "Драйвер $driverName успешно скачан."
         } catch {
@@ -68,6 +69,7 @@ function Check-AndDownload-WinDivert {
     if (-not (Test-Path -Path $exePath)) {
         Write-Host "Исполняемый файл $exeName не найден. Скачиваю..."
         try {
+            Start-Sleep -Seconds 3
             Invoke-WebRequest -Uri $exeRawUrl -OutFile $exePath
             Write-Host "Исполняемый файл $exeName успешно скачан."
         } catch {

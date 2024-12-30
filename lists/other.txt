@@ -43,3 +43,5 @@ quora.com
 rumble.com
 wixmp.com
 gifer.com
+whatsapp.com
+whatsapp.net
