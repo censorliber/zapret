@@ -34,6 +34,8 @@ static.doubleclick.net
 cdn.vigo.one
 republic.ru
 news.google.com
+whatsapp.com
+whatsapp.net
 viber.com
 signal.org
 hrw.org
@@ -43,5 +45,3 @@ quora.com
 rumble.com
 wixmp.com
 gifer.com
-whatsapp.com
-whatsapp.net
