@@ -4,6 +4,7 @@ ntc.party
 bbc.com
 dtf.ru
 proton.me
+mail.proton.me
 twitter.com
 twimg.com
 pbs.twimg.com
@@ -14,6 +15,8 @@ mullvad.net
 rutracker.org
 rutracker.cc
 nnmclub.to
+z-lib.io
+singlelogin.cc
 archive.org
 web.archive.org
 soundcloud.com
@@ -39,3 +42,4 @@ escapefromtarkov.com
 quora.com
 rumble.com
 wixmp.com
+gifer.com
