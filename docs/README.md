@@ -4,7 +4,7 @@
 > Есть вопросы? Задай их здесь: https://github.com/censorliber/zapret/issues/new
 
 ### Хочу быстро и просто. Как использовать?
-1. Скачать по ссылке https://github.com/censorliber/zapret_binary/raw/refs/heads/main/zapret6.3.3.exe
+1. Скачать по ссылке https://github.com/censorliber/zapret/archive/refs/tags/6.3.4.zip
 2. Запустите файл **`start.bat`**
 3. Пробуйте различные стратегии (набрав необходимую цифру и после Enter) для обхода блокировок.
 4. Пробуйте ЛЮБЫЕ стратегии которые существуют, но перед этим попробуйте стратегии непосредственно для **ВАШЕГО** провайдера
