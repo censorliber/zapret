@@ -20,7 +20,7 @@ Write-Host ""
 
 $BIN = "$PSScriptRoot\bin\"
 $LISTS = "$PSScriptRoot\lists\"
-$localVersion = "6.3.3"
+$localVersion = "6.3.4"
 
 function Test-Administrator {
     $identity = [System.Security.Principal.WindowsIdentity]::GetCurrent()
@@ -459,11 +459,11 @@ if (Check-Update) {
     $choice = Read-Host "Скачать обновление? (введите цифру 1 если Вы согласны обновить программу / введите цифру 0 если против)"
     if ($choice -eq "1") {
         # Здесь код для скачивания и установки обновления
-        Write-Host "Скачивание обновления..."
+        Write-Host "Скачивание обновления... (если не скачалось посетите сайт https://t.me/bypassblock)"
         Start-Sleep -Seconds 2
         Write-Host "Пожалуйста удалите старую папку после того как Вы скачаете новую папку (запускайте уже новую версию!)"
         Start-Sleep -Seconds 5
-        Start-Process https://github.com/censorliber/zapret_binary/raw/refs/heads/main/zapret$latestVersion.exe
+        Start-Process https://github.com/censorliber/zapret/archive/refs/tags/$latestVersion.zip
         Exit 0
     } elseif ($choice -eq "0") {
         Write-Host "ОБНОВЛЕНИЕ ОТМЕНЕНО! В БУДУЩЕМ ВЫ ДОЛЖНЫ СКАЧАТЬ НОВУЮ ВЕРСИЮ"
