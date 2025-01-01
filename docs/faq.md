@@ -12,3 +12,11 @@
 ![image](https://github.com/user-attachments/assets/57eaf8ff-eb76-4e16-8626-714c53de23bb)
 
 ![image](https://github.com/user-attachments/assets/8e11a3df-c720-4261-be9a-8b39af9ee32e)
+
+## [🛡 Что такое Zapret](https://github.com/censorliber/zapret/blob/main/docs/zapret.md)
+
+## [🌐 Настройка браузеров](https://github.com/censorliber/zapret/blob/main/docs/browser.md)
+
+## [🚀 Как добавить Запрет в автозагрузку (как службу)](https://github.com/censorliber/zapret/blob/main/docs/autorun.md)
+
+## [👾 О вирусах](https://github.com/censorliber/zapret/blob/main/docs/virus.md)
