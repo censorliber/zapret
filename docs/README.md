@@ -26,12 +26,6 @@
 ### По всем вопросам обращаться в группу https://t.me/youtubenotwork или https://discord.gg/kkcBDG2uws
 ### Другие полезные сервисы и VPN https://github.com/awesome-windows11/CensorNet
 
-## [🛡 Что такое Zapret](https://github.com/censorliber/zapret/blob/main/docs/zapret.md)
-
-## [🌐 Настройка браузеров](https://github.com/censorliber/zapret/blob/main/docs/browser.md)
-
-## [❓ Частые вопросы и ошибки](https://github.com/censorliber/zapret/blob/main/docs/faq.md)
-
 > [!CAUTION]  
 > При любых ошибках просьба **ВСЕГДА** оставляйте скриншот и изображение ошибки.
 > 
@@ -48,6 +42,12 @@
 
 > [!TIP]  
 > Автор KDS. Его оригинальный [архив сборок](https://ntc.party/t/ytdisbystro-%D0%B0%D1%80%D1%85%D0%B8%D0%B2-%D0%B2%D1%81%D0%B5%D1%85-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B9/12582)
+> 
+## [🛡 Что такое Zapret](https://github.com/censorliber/zapret/blob/main/docs/zapret.md)
+
+## [🌐 Настройка браузеров](https://github.com/censorliber/zapret/blob/main/docs/browser.md)
+
+## [❓ Частые вопросы и ошибки](https://github.com/censorliber/zapret/blob/main/docs/faq.md)
 
 ## 4. Автозапуск
 Запустите данную команду из консоли (_`win + r`, потом `cmd.exe`_), где следует указать необходимый `cmd` файл (_в данном случае `C:\Zapret-main\start1.cmd`)_:
