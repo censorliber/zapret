@@ -60,8 +60,10 @@ about:preferences#privacy
 
 Если у Вас ну никак не работает Zapret - поставьте чистую Windows, например [LTSC](https://windows64.net/398-windows-10-x64-ltsc-21h2-s-aktivatorom-na-russkom.html). 
 
-## [Что такое Zapret](https://github.com/censorliber/zapret/blob/main/docs/zapret.md)
+## [🛡 Что такое Zapret](https://github.com/censorliber/zapret/blob/main/docs/zapret.md)
 
-## [Частые вопросы и ошибки](https://github.com/censorliber/zapret/blob/main/docs/faq.md)
+## [❓ Частые вопросы и ошибки](https://github.com/censorliber/zapret/blob/main/docs/faq.md)
 
-## [О вирусах](https://github.com/censorliber/zapret/blob/main/docs/virus.md)
+## [🚀 Как добавить Запрет в автозагрузку (как службу)](https://github.com/censorliber/zapret/blob/main/docs/autorun.md)
+
+## [👾 О вирусах](https://github.com/censorliber/zapret/blob/main/docs/virus.md)
