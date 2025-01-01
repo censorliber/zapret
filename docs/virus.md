@@ -36,8 +36,10 @@
 - SHA-1 `5b9a89d08554f911e93665a3910ff16db33bf1ce`
 - SHA-256 `c26719336725fda6d48815582acee198c0d7d4f6a6f9f73b5e0d58ca19cfbe35`
 
-## [Что такое Zapret](https://github.com/censorliber/zapret/blob/main/docs/zapret.md)
+## [🛡 Что такое Zapret](https://github.com/censorliber/zapret/blob/main/docs/zapret.md)
 
-## [Настройка браузеров](https://github.com/censorliber/zapret/blob/main/docs/browser.md)
+## [🌐 Настройка браузеров](https://github.com/censorliber/zapret/blob/main/docs/browser.md)
 
-## [Частые вопросы и ошибки](https://github.com/censorliber/zapret/blob/main/docs/faq.md)
+## [❓ Частые вопросы и ошибки](https://github.com/censorliber/zapret/blob/main/docs/faq.md)
+
+## [🚀 Как добавить Запрет в автозагрузку (как службу)](https://github.com/censorliber/zapret/blob/main/docs/autorun.md)
