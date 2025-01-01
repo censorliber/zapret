@@ -84,7 +84,7 @@ about:preferences#privacy
 
 Если у Вас ну никак не работает Zapret - поставьте чистую Windows, например [LTSC](https://windows64.net/398-windows-10-x64-ltsc-21h2-s-aktivatorom-na-russkom.html). 
 
-## 2. Частые ошибки
+## [Частые вопросы и ошибки](https://github.com/censorliber/zapret/blob/main/docs/faq.md)
 ### По всем вопросам обращаться в группу https://t.me/youtubenotwork или https://discord.gg/kkcBDG2uws
 ### Другие полезные сервисы и VPN https://github.com/awesome-windows11/CensorNet
 > [!CAUTION]  
@@ -103,21 +103,6 @@ about:preferences#privacy
 
 > [!TIP]  
 > Автор KDS. Его оригинальный [архив сборок](https://ntc.party/t/ytdisbystro-%D0%B0%D1%80%D1%85%D0%B8%D0%B2-%D0%B2%D1%81%D0%B5%D1%85-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B9/12582)
-
-### Мой N-ый сайт не работает! Что делать?
-Свои сайты следует добавлять в файл `other.txt`, так как иначе программа не поймёт какие сайты фильтровать.
-
-### Аватарки Discord не работают!
-Если Zapret не может разблокировать иконки Discord - выключите DNS в браузере и оставьте его по умолчанию. Это может помочь.
-
-![image](https://github.com/user-attachments/assets/e4c9f139-dcd6-4197-90b8-ca54b2e10e1b)
-
-## 3. Обход блокировок аватарок в Instagram
-К сожалению сервис и сайт `scontent-hel3-1.cdninstagram.com` использует только один IP адрес, и обойти его блокировку посредствам DNS не предоставляется возможным. Поэтому для обхода блокировок именно Instagram аватарок, следует обратиться к VPN.
-
-![image](https://github.com/user-attachments/assets/57eaf8ff-eb76-4e16-8626-714c53de23bb)
-
-![image](https://github.com/user-attachments/assets/8e11a3df-c720-4261-be9a-8b39af9ee32e)
 
 ## 4. Автозапуск
 Запустите данную команду из консоли (_`win + r`, потом `cmd.exe`_), где следует указать необходимый `cmd` файл (_в данном случае `C:\Zapret-main\start1.cmd`)_:
