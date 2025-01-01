@@ -63,3 +63,5 @@ about:preferences#privacy
 ## [Что такое Zapret](https://github.com/censorliber/zapret/blob/main/docs/zapret.md)
 
 ## [Частые вопросы и ошибки](https://github.com/censorliber/zapret/blob/main/docs/faq.md)
+
+## [О вирусах](https://github.com/censorliber/zapret/blob/main/docs/virus.md)
