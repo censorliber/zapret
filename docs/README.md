@@ -16,6 +16,7 @@
 ![image](https://github.com/user-attachments/assets/3b52ddd1-ee0c-4c58-bab1-ffa6202e172c)
 
 <h1 align="center">Хочу узнать подробнее </h1>
+
 ## [Что такое Zapret](https://github.com/censorliber/zapret/blob/main/docs/zapret.md)
 > [!CAUTION]  
 > [Касперский](https://github.com/bol-van/zapret/issues/611) и иные российские вирусы начали войну с запретами и иными средствами обхода блокировок. Чтобы использовать их спокойно рекомендуется перейти на альтернативные американские антивирусы (Defender, ESET32 и т.д.), которые не выдают ложные и обманчивые срабатывания и помогают от большего количества угроз.
