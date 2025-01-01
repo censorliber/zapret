@@ -24,7 +24,8 @@ novayagazeta.eu
 roskomsvoboda.org
 holod.media
 dept.one
-7tv.app
+idelreal.org
+rferl.org
 indigogobot.com
 glaznews.com
 cdn.hsmedia.ru
@@ -45,3 +46,5 @@ quora.com
 rumble.com
 wixmp.com
 gifer.com
+telegram.org
+t.me

@@ -28,18 +28,27 @@ function Test-Administrator {
     $principal.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)
 }
 
-if (!(Test-Administrator)) {
-    Write-Host "Requesting administrator rights..."
-    Start-Process powershell.exe -ArgumentList "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "`"$PSCommandPath`"" -Verb RunAs
-    exit
+function Show-Telegram {
+    $regKey = "HKCU:\Software\Zapret"
+    $regValue = "TelegramOpened"
+
+    if ((Get-ItemProperty -Path $regKey -Name $regValue -ErrorAction SilentlyContinue).$regValue -eq 1) {
+        Write-Host "Присоединяйтесь к нашему каналу Telegram (для обновлений) https://t.me/bypassblock"
+    } else {
+        Write-Host "Присоединяйтесь к нашему каналу Telegram"
+        Start-Process https://t.me/bypassblock
+        New-Item -Path $regKey -Force | Out-Null
+        New-ItemProperty -Path $regKey -Name $regValue -Value 1 -PropertyType DWORD -Force | Out-Null
+    }
 }
-Write-Host "Запуск прошёл успешно..."
 
 function Check-AndDownload-WinDivert {
-    $driverName = "WinDivert.dll"
+    $WinDivertDll = "WinDivert.dll"
+    $WinDivert64Sys = "WinDivert64.sys"
     $exeName = "winws.exe"
 
-    $driverRawUrl = "https://github.com/bol-van/zapret-win-bundle/raw/refs/heads/master/zapret-winws/WinDivert.dll"
+    $WinDivertDLLURL = "https://github.com/bol-van/zapret-win-bundle/raw/refs/heads/master/zapret-winws/WinDivert.dll"
+    $WinDivert64SysURL = "https://github.com/bol-van/zapret-win-bundle/raw/refs/heads/master/zapret-winws/WinDivert64.sys"
     $exeRawUrl = "https://github.com/bol-van/zapret-win-bundle/raw/refs/heads/master/zapret-winws/winws.exe"
 
     # Проверяем наличие папки bin
@@ -48,23 +57,36 @@ function Check-AndDownload-WinDivert {
         New-Item -ItemType Directory -Path $BIN | Out-Null
     }
 
-    # Проверяем наличие драйвера
-    $driverPath = Join-Path -Path $BIN -ChildPath $driverName
-    if (-not (Test-Path -Path $driverPath)) {
-        Write-Host "Драйвер $driverName не найден. Скачиваю..."
+    $WinDivertDllPATH = Join-Path -Path $BIN -ChildPath $WinDivertDll
+    if (-not (Test-Path -Path $WinDivertDllPATH)) {
+        Write-Host "Драйвер $WinDivertDll не найден. Скачиваю..."
         try {
             Start-Sleep -Seconds 3
-            Invoke-WebRequest -Uri $driverRawUrl -OutFile $driverPath
-            Write-Host "Драйвер $driverName успешно скачан."
+            Invoke-WebRequest -Uri $WinDivertDLLURL -OutFile $WinDivertDllPATH
+            Write-Host "Драйвер $WinDivertDll успешно скачан."
         } catch {
             Write-Error "Ошибка при скачивании драйвера: $_"
-            return # Прерываем выполнение функции в случае ошибки
+            return
         }
     } else {
-        Write-Host "Драйвер $driverName найден."
+        Write-Host "Драйвер $WinDivertDll найден."
     }
 
-    # Проверяем наличие исполняемого файла
+    $WinDivert64SysPATH = Join-Path -Path $BIN -ChildPath $WinDivert64Sys
+    if (-not (Test-Path -Path $WinDivert64SysPATH)) {
+        Write-Host "Драйвер $WinDivert64Sys не найден. Скачиваю..."
+        try {
+            Start-Sleep -Seconds 3
+            Invoke-WebRequest -Uri $WinDivert64SysURL -OutFile $WinDivert64SysPATH
+            Write-Host "Драйвер $WinDivert64Sys успешно скачан."
+        } catch {
+            Write-Error "Ошибка при скачивании драйвера: $_"
+            return
+        }
+    } else {
+        Write-Host "Драйвер $WinDivert64Sys найден."
+    }
+
     $exePath = Join-Path -Path $BIN -ChildPath $exeName
     if (-not (Test-Path -Path $exePath)) {
         Write-Host "Исполняемый файл $exeName не найден. Скачиваю..."
@@ -81,6 +103,15 @@ function Check-AndDownload-WinDivert {
     }
 }
 
+if (!(Test-Administrator)) {
+    Write-Host "Requesting administrator rights..."
+    Start-Process powershell.exe -ArgumentList "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "`"$PSCommandPath`"" -Verb RunAs
+    exit
+}
+
+Write-Host "Запуск прошёл успешно..."
+
+Show-Telegram
 Check-AndDownload-WinDivert
 
 function Invoke-ZapretStrategy {
@@ -100,11 +131,7 @@ function Invoke-ZapretStrategy {
 
     # Попытка запуска процесса
     try {
-        $process = Start-Process -FilePath "$BIN\winws.exe" `
-                                 -ArgumentList $Arguments `
-                                 -WindowStyle Minimized `
-                                 -PassThru `
-                                 -WorkingDirectory $PSScriptRoot
+        $process = Start-Process -FilePath "$BIN\winws.exe" -ArgumentList $Arguments -WindowStyle Minimized -PassThru -WorkingDirectory $PSScriptRoot
         # Проверка успешности запуска
         if ($process -eq $null) {
             Write-Error "Не удалось запустить winws.exe с аргументами: $Arguments"
@@ -291,9 +318,11 @@ function Edit-Hosts {
         "31.13.72.36 facebook.com",
         "31.13.72.36 www.facebook.com",
         "31.13.72.12 static.xx.fbcdn.net",
+        "31.13.72.12 external-hel3-1.xx.fbcdn.net",
         "157.240.225.174 www.instagram.com",
         "157.240.225.174 instagram.com",
-        "157.240.247.63 scontent.cdninstagram.com"
+        "157.240.247.63 scontent.cdninstagram.com",
+        "157.240.247.63 scontent-hel3-1.cdninstagram.com"
     )
 
     $newHostsContent -join "`n" | Set-Content -Path $hostsPath -Encoding UTF8
@@ -425,22 +454,6 @@ function Check-Update {
     }
 }
 
-function Show-Telegram {
-    $regKey = "HKCU:\Software\Zapret"
-    $regValue = "TelegramOpened"
-
-    if ((Get-ItemProperty -Path $regKey -Name $regValue -ErrorAction SilentlyContinue).$regValue -eq 1) {
-        Write-Host "Присоединяйтесь к нашему каналу Telegram (для обновлений) https://t.me/bypassblock"
-    } else {
-        Write-Host "Присоединяйтесь к нашему каналу Telegram"
-        Start-Process https://t.me/bypassblock
-        New-Item -Path $regKey -Force | Out-Null
-        New-ItemProperty -Path $regKey -Name $regValue -Value 1 -PropertyType DWORD -Force | Out-Null
-    }
-}
-
-Show-Telegram
-
 if (Check-Update) {
     # Предлагаем пользователю скачать обновление
     $choice = Read-Host "Скачать обновление? (введите цифру 1 если Вы согласны обновить программу / введите цифру 0 если против)"
@@ -484,8 +497,8 @@ Write-Host "12. Запустить стратегию split с badseq, допо�
 Write-Host "13. Запустить стратегию fake и split2, bin файл google (предпочтительно МГТС)"
 Write-Host "14. Запустить стратегию fake и split2 bin файл quic_test_00 (предпочтительно МГТС)"
 Write-Host ""
-Write-Host "30. Запустить ультимейт конфиг ZL (разблокирует любые сайты)"
-Write-Host "31. Запустить ультимейт конфиг v2 (разблокирует любые сайты)"
+Write-Host "30. Запустить стратегию ультимейт конфиг ZL (разблокирует любые сайты)"
+Write-Host "31. Запустить стратегию ультимейт конфиг v2 (разблокирует любые сайты)"
 Write-Host ""
 Write-Host ""
 Write-Host "40 Проверить работу YouTube глобально! (если никакие стратегии не помогают)"
