@@ -13,7 +13,7 @@
 
 **Не используйте приложение Discord, вместо этого подключайтесь по ссылке https://discord.com/channels/@me**!!
 
-![image](https://github.com/user-attachments/assets/3b52ddd1-ee0c-4c58-bab1-ffa6202e172c)
+![image](https://github.com/user-attachments/assets/7c8c46c5-4284-471a-897d-e27234d37149)
 
 <h1 align="center">Хочу узнать подробнее </h1>
 
@@ -21,7 +21,7 @@
 > [Касперский](https://github.com/bol-van/zapret/issues/611) и иные российские вирусы начали войну с запретами и иными средствами обхода блокировок. Чтобы использовать их спокойно рекомендуется перейти на альтернативные американские антивирусы (Defender, ESET32 и т.д.), которые не выдают ложные и обманчивые срабатывания и помогают от большего количества угроз.
 
 > [!CAUTION]  
-> [Яндекс DNS](https://t.me/bypassblock/134) перестали открывать Discord и другие заблокированные сайты. Не пользуйтесь ими. Рекомендуем сменить их на [**Google DNS**](https://developers.google.com/speed/public-dns) или [**Quad9 DNS**](https://quad9.net/service/service-addresses-and-features). Программа быстро позволяет Вам это сделать (опции `92` и `93`)
+> [Яндекс DNS](https://t.me/bypassblock/134) перестали открывать Discord и другие заблокированные сайты. Не пользуйтесь ими. Рекомендуем сменить их на [**Google DNS**](https://developers.google.com/speed/public-dns) или [**Quad9 DNS**](https://quad9.net/service/service-addresses-and-features). Программа быстро позволяет Вам это сделать (опции `51` и `52`)
 
 ### По всем вопросам обращаться в группу https://t.me/youtubenotwork или https://discord.gg/kkcBDG2uws
 ### Другие полезные сервисы и VPN https://github.com/awesome-windows11/CensorNet
