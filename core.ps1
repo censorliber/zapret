@@ -463,7 +463,7 @@ if (Check-Update) {
         Start-Sleep -Seconds 2
         Write-Host "Пожалуйста удалите старую папку после того как Вы скачаете новую папку (запускайте уже новую версию!)"
         Start-Sleep -Seconds 5
-        Start-Process https://github.com/censorliber/zapret/archive/refs/tags/$latestVersion.zip
+        Start-Process https://github.com/censorliber/zapret/releases/download/$latestVersion/zapret$latestVersion.zip
         Exit 0
     } elseif ($choice -eq "0") {
         Write-Host "ОБНОВЛЕНИЕ ОТМЕНЕНО! В БУДУЩЕМ ВЫ ДОЛЖНЫ СКАЧАТЬ НОВУЮ ВЕРСИЮ"
@@ -472,8 +472,6 @@ if (Check-Update) {
     }
 }
 
-Write-Host "ВНИМАНИЕ: Вы должны распаковать ZIP архив перед использованием!"
-Write-Host ""
 Write-Host "-----------------------"
 Write-Host "ВЫБЕРИТЕ СТРАТЕГИЮ:"
 Write-Host "0. Остановить Zapret"
