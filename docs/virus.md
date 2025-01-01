@@ -39,3 +39,5 @@
 ## [Что такое Zapret](https://github.com/censorliber/zapret/blob/main/docs/zapret.md)
 
 ## [Настройка браузеров](https://github.com/censorliber/zapret/blob/main/docs/browser.md)
+
+## [Частые вопросы и ошибки](https://github.com/censorliber/zapret/blob/main/docs/faq.md)
