@@ -2,6 +2,7 @@
 
 > [!IMPORTANT]  
 > Есть вопросы? Задай их здесь: https://github.com/censorliber/zapret/issues/new
+> Новые обновления (дорожная карта) доступна здесь: https://github.com/censorliber/zapret/issues/17
 
 ### Хочу быстро и просто. Как использовать?
 1. Скачать по ссылке https://github.com/censorliber/zapret/releases/download/6.3.4/zapret6.3.4.zip
