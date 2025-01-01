@@ -128,6 +128,6 @@ reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v Zapret /t REG_SZ
 > [!NOTE]  
 > Это будет каждый раз открывать окно консоли, но его можно перенести на другой рабочий стол через комбинацию `win + tab`
 
-## [О вирусах]()
+## [О вирусах](https://github.com/censorliber/zapret/blob/main/docs/virus.md)
 
 <div align='center'><a href=''><img src='https://www.websitecounterfree.com/c.php?d=9&id=60326&s=1' border='0' alt='Free Website Counter'></a><br / ><small></small></div>
