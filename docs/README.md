@@ -26,11 +26,11 @@
 ### По всем вопросам обращаться в группу https://t.me/youtubenotwork или https://discord.gg/kkcBDG2uws
 ### Другие полезные сервисы и VPN https://github.com/awesome-windows11/CensorNet
 
-## [Что такое Zapret](https://github.com/censorliber/zapret/blob/main/docs/zapret.md)
+## [🛡 Что такое Zapret](https://github.com/censorliber/zapret/blob/main/docs/zapret.md)
 
-## [Настройка браузеров](https://github.com/censorliber/zapret/blob/main/docs/browser.md)
+## [🌐 Настройка браузеров](https://github.com/censorliber/zapret/blob/main/docs/browser.md)
 
-## [Частые вопросы и ошибки](https://github.com/censorliber/zapret/blob/main/docs/faq.md)
+## [❓ Частые вопросы и ошибки](https://github.com/censorliber/zapret/blob/main/docs/faq.md)
 
 > [!CAUTION]  
 > При любых ошибках просьба **ВСЕГДА** оставляйте скриншот и изображение ошибки.
@@ -59,6 +59,6 @@ reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v Zapret /t REG_SZ
 > [!NOTE]  
 > Это будет каждый раз открывать окно консоли, но его можно перенести на другой рабочий стол через комбинацию `win + tab`
 
-## [О вирусах](https://github.com/censorliber/zapret/blob/main/docs/virus.md)
+## [👾 О вирусах](https://github.com/censorliber/zapret/blob/main/docs/virus.md)
 
 <div align='center'><a href=''><img src='https://www.websitecounterfree.com/c.php?d=9&id=60326&s=1' border='0' alt='Free Website Counter'></a><br / ><small></small></div>
