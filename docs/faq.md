@@ -6,7 +6,7 @@
 
 ![image](https://github.com/user-attachments/assets/e4c9f139-dcd6-4197-90b8-ca54b2e10e1b)
 
-## 3. Обход блокировок аватарок в Instagram
+### Фото и аватарки в Instagram не работают!
 К сожалению сервис и сайт `scontent-hel3-1.cdninstagram.com` использует только один IP адрес, и обойти его блокировку посредствам DNS не предоставляется возможным. Поэтому для обхода блокировок именно Instagram аватарок, следует обратиться к VPN.
 
 ![image](https://github.com/user-attachments/assets/57eaf8ff-eb76-4e16-8626-714c53de23bb)
