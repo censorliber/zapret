@@ -59,3 +59,7 @@ about:preferences#privacy
 Участились случаи попытки заблокировать обходы блокировок от систем Windows встроенные в ноутбуки, которые поставляются из под коробки самим производителем. В таком случае нужно заменить систему на свою чистую (_не сборку!_).
 
 Если у Вас ну никак не работает Zapret - поставьте чистую Windows, например [LTSC](https://windows64.net/398-windows-10-x64-ltsc-21h2-s-aktivatorom-na-russkom.html). 
+
+## [Что такое Zapret](https://github.com/censorliber/zapret/blob/main/docs/zapret.md)
+
+## [Частые вопросы и ошибки](https://github.com/censorliber/zapret/blob/main/docs/faq.md)
