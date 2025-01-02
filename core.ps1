@@ -47,8 +47,8 @@ function Check-AndDownload-WinDivert {
     $WinDivert64Sys = "WinDivert64.sys"
     $exeName = "winws.exe"
 
-    $WinDivertDLLURL = "https://github.com/censorliber/zapret_binary/raw/refs/heads/main/WinDivert.dll"
-    $WinDivert64SysURL = "https://github.com/censorliber/zapret_binary/raw/refs/heads/main/WinDivert64.sys"
+    $WinDivertDLLURL = "https://github.com/bol-van/zapret-win-bundle/raw/refs/heads/master/zapret-winws/WinDivert.dll"
+    $WinDivert64SysURL = "https://github.com/bol-van/zapret-win-bundle/raw/refs/heads/master/zapret-winws/WinDivert64.sys"
     $exeRawUrl = "https://github.com/bol-van/zapret-win-bundle/raw/refs/heads/master/zapret-winws/winws.exe"
 
     # Проверяем наличие папки bin
