@@ -153,6 +153,7 @@ function Stop-Zapret {
         Write-Host "Перезапуск Запрета..."
         Stop-Process -Force -Name winws
         Stop-Service -Name "Zapret" -Force -ErrorAction SilentlyContinue
+        sc.exe delete "Zapret" > $null 2>&1
     } else {
         Write-Host "Попытка запуска стратегии..."
     }
@@ -162,6 +163,7 @@ function Stop-Zapret {
         Write-Host "ГУДБАЙДИПИАЙ НЕ РАБОТАЕТ С ZAPRET!!!"
         Stop-Process -Force -Name winws
         Stop-Service -Name "GoodbyeDPI" -Force -ErrorAction SilentlyContinue
+        sc.exe delete "GoodbyeDPI" > $null 2>&1
         Remove-Item -Path "HKLM:\SYSTEM\CurrentControlSet\Services\GoodbyeDPI" -Recurse -Force -ErrorAction SilentlyContinue
     }
     
@@ -178,15 +180,18 @@ function Stop-Zapret {
         Write-Host "Служба WinDivert была успешно удалена."
     }
 
-    Stop-Service -Name "Zapret" -Force -ErrorAction SilentlyContinue
+    try {
+        Stop-Service -Name "WinDivert14" -Force -ErrorAction SilentlyContinue
+    } catch {
+        Write-Host "Служба WinDivert была успешно остановлена."
+    }
 
     try {
-        Remove-Service -Name "Zapret" -Force -ErrorAction SilentlyContinue
+        sc.exe delete "WinDivert14" > $null 2>&1
     } catch {
         Write-Host "Служба WinDivert была успешно удалена."
     }
 
-    Stop-Service -Name "WinDivert14" -Force -ErrorAction SilentlyContinue
     Remove-Item -Path "HKLM:\SYSTEM\CurrentControlSet\Services\WinDivert" -Recurse -Force -ErrorAction SilentlyContinue
     Remove-Item -Path "HKLM:\SYSTEM\CurrentControlSet\Services\WinDivert14" -Recurse -Force -ErrorAction SilentlyContinue
 }
