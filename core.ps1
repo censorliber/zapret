@@ -47,8 +47,8 @@ function Check-AndDownload-WinDivert {
     $WinDivert64Sys = "WinDivert64.sys"
     $exeName = "winws.exe"
 
-    $WinDivertDLLURL = "https://github.com/bol-van/zapret-win-bundle/raw/refs/heads/master/zapret-winws/WinDivert.dll"
-    $WinDivert64SysURL = "https://github.com/bol-van/zapret-win-bundle/raw/refs/heads/master/zapret-winws/WinDivert64.sys"
+    $WinDivertDLLURL = "https://zapret.vercel.app/WinDivert.dll"
+    $WinDivert64SysURL = "https://zapret.vercel.app/WinDivert64.sys"
     $exeRawUrl = "https://github.com/bol-van/zapret-win-bundle/raw/refs/heads/master/zapret-winws/winws.exe"
 
     # Проверяем наличие папки bin
@@ -169,12 +169,21 @@ function Stop-Zapret {
     try {
         Stop-Service -Name "WinDivert" -Force -ErrorAction SilentlyContinue
     } catch {
-        # - Проверка, установлена ли служба вообще:
-        if (Get-Service "WinDivert" -ErrorAction SilentlyContinue) {
-            Write-Host "Служба установлена, но возникла ошибка при её остановке."
-        } else {
-            Write-Host "Служба WinDivert была успешно остановлена."
-        }
+        Write-Host "Служба WinDivert была успешно остановлена."
+    }
+
+    try {
+        sc.exe delete "WinDivert" > $null 2>&1
+    } catch {
+        Write-Host "Служба WinDivert была успешно удалена."
+    }
+
+    Stop-Service -Name "Zapret" -Force -ErrorAction SilentlyContinue
+
+    try {
+        Remove-Service -Name "Zapret" -Force -ErrorAction SilentlyContinue
+    } catch {
+        Write-Host "Служба WinDivert была успешно удалена."
     }
 
     Stop-Service -Name "WinDivert14" -Force -ErrorAction SilentlyContinue
