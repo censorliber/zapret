@@ -1,7 +1,7 @@
-Запустите данную команду из консоли (_`win + r`, потом `cmd.exe`_), где следует указать необходимый `cmd` файл (_в данном случае `C:\Zapret-main\start.cmd`)_:
+Запустите данную команду из консоли (_`win + r`, потом `cmd.exe`_), где следует указать необходимый `bat` файл (_в данном случае `C:\Zapret-main\start.bat`)_:
 
 ```cmd
-reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v Zapret /t REG_SZ /d "C:\Zapret-main\start.cmd" /f
+reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v Zapret /t REG_SZ /d "C:\Zapret-main\start.bat" /f
 ```
 
 > [!NOTE]  
