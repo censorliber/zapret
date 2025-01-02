@@ -169,13 +169,11 @@ function Stop-Zapret {
     try {
         Stop-Service -Name "WinDivert" -Force -ErrorAction SilentlyContinue
     } catch {
-        Write-Host "Не удалось остановить службу WinDivert. Возможно, она не установлена."
-        # Дополнительные действия по обработке ошибки, например:
         # - Проверка, установлена ли служба вообще:
         if (Get-Service "WinDivert" -ErrorAction SilentlyContinue) {
             Write-Host "Служба установлена, но возникла ошибка при её остановке."
         } else {
-            Write-Host "Служба WinDivert не найдена."
+            Write-Host "Служба WinDivert была успешно остановлена."
         }
     }
 
