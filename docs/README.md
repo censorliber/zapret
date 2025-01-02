@@ -31,6 +31,16 @@
 
 <h1 align="center">Хочу узнать подробнее </h1>
 
+## [🛡 Что такое Zapret](https://github.com/censorliber/zapret/blob/main/docs/zapret.md)
+
+## [🌐 Настройка браузеров](https://github.com/censorliber/zapret/blob/main/docs/browser.md)
+
+## [❓ Частые вопросы и ошибки](https://github.com/censorliber/zapret/blob/main/docs/faq.md)
+
+## [🚀 Как добавить Запрет в автозагрузку (как службу)](https://github.com/censorliber/zapret/blob/main/docs/autorun.md)
+
+## [👾 О вирусах](https://github.com/censorliber/zapret/blob/main/docs/virus.md)
+
 > [!CAUTION]  
 > [Касперский](https://github.com/bol-van/zapret/issues/611) и иные российские вирусы начали войну с запретами и иными средствами обхода блокировок. Чтобы использовать их спокойно рекомендуется перейти на **альтернативные** антивирусы (Defender, ESET32 и т.д.), которые не выдают ложные и обманчивые срабатывания и помогают от большего количества угроз. Также не следует использовать российские антивирусы, либо добавлять файлы в исключения.
 
@@ -59,14 +69,5 @@
 > [!TIP]  
 > Автор KDS. Его оригинальный [архив сборок](https://ntc.party/t/ytdisbystro-%D0%B0%D1%80%D1%85%D0%B8%D0%B2-%D0%B2%D1%81%D0%B5%D1%85-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B9/12582)
 > 
-## [🛡 Что такое Zapret](https://github.com/censorliber/zapret/blob/main/docs/zapret.md)
-
-## [🌐 Настройка браузеров](https://github.com/censorliber/zapret/blob/main/docs/browser.md)
-
-## [❓ Частые вопросы и ошибки](https://github.com/censorliber/zapret/blob/main/docs/faq.md)
-
-## [🚀 Как добавить Запрет в автозагрузку (как службу)](https://github.com/censorliber/zapret/blob/main/docs/autorun.md)
-
-## [👾 О вирусах](https://github.com/censorliber/zapret/blob/main/docs/virus.md)
 
 <div align='center'><a href=''><img src='https://www.websitecounterfree.com/c.php?d=9&id=60326&s=1' border='0' alt='Free Website Counter'></a><br / ><small></small></div>
