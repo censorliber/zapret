@@ -481,6 +481,7 @@ if (Check-Update) {
 
 Write-Host "-----------------------"
 Write-Host "ВЫБЕРИТЕ СТРАТЕГИЮ:"
+Write-Host ""
 Write-Host "0. Остановить Zapret"
 Write-Host ""
 Write-Host "1. Запустить стратегию Discord TCP 80 (предпочтительно Ростелеком)"
