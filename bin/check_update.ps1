@@ -24,7 +24,7 @@ $url = "https://github.com/censorliber/zapret/releases/download/$latestVersion/z
 # Имя файла архива
 $zipFileName = "zapret$latestVersion.zip"
 # Папка, где находится скрипт
-$scriptDirectory = Join-Path -Path $PSScriptRoot -ChildPath ".."
+$scriptDirectory = Join-Path -Path $PSScriptRoot -ChildPath "..\.."
 # Имя папки для распаковки
 $destinationFolderName = "zapret"
 # Полный путь к папке для распаковки
