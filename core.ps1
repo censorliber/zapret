@@ -587,74 +587,8 @@ $other2 = "--filter-tcp=80 --hostlist=""$LISTS\other.txt"" --dpi-desync=fake,mul
 $other3 = "--filter-tcp=443 --hostlist=""$LISTS\other.txt"" --dpi-desync=fake,multisplit --dpi-desync-split-seqovl=1 --dpi-desync-split-pos=1 --dpi-desync-fake-tls=""$BIN\tls_clienthello_2.bin"" --dpi-desync-ttl=5 --new"
 $other4 = "--filter-tcp=443 --hostlist=""$LISTS\other.txt"" --dpi-desync=fake,multisplit --dpi-desync-split-seqovl=1 --dpi-desync-split-pos=midsld-1 --dpi-desync-fooling=md5sig,badseq --dpi-desync-fake-tls=""$BIN\tls_clienthello_4.bin"" --dpi-desync-autottl --new"
 
-# Функция для сохранения стратегии в реестр
-function Set-DefaultStrategy {
-    param(
-        [string]$StrategyName,
-        [string]$ConfigArg
-    )
-
-    $RegistryPath = "HKCU:\Software\Zapret"
-
-    # Создаем раздел реестра, если он не существует
-    if (!(Test-Path $RegistryPath)) {
-        New-Item -Path $RegistryPath -Force | Out-Null
-    }
-
-    # Записываем имя стратегии и аргументы в реестр
-    Set-ItemProperty -Path $RegistryPath -Name "DefaultStrategy" -Value $StrategyName
-    Set-ItemProperty -Path $RegistryPath -Name "DefaultConfigArg" -Value $ConfigArg
-    Write-Host "Стратегия '$StrategyName' сохранена как стратегия по умолчанию в реестре."
-}
-
-# Функция для получения стратегии и аргументов из реестра
-function Get-DefaultStrategy {
-    $RegistryPath = "HKCU:\Software\Zapret"
-    $DefaultStrategy = "Ultimate Config v2" # Стратегия по умолчанию, если в реестре ничего нет
-    $DefaultConfigArg = "--wf-tcp=80,443 --wf-udp=443,50000-50090 $YRTMP1 $YQ7 $DISIP5 $DISTCP12 $DISUDP9 $UDP7 $YGV3 $other2 $other4 $faceinsta" # Аргументы по умолчанию
-
-    if (Test-Path $RegistryPath) {
-        $StrategyName = Get-ItemProperty -Path $RegistryPath -Name "DefaultStrategy" -ErrorAction SilentlyContinue | Select-Object -ExpandProperty "DefaultStrategy"
-        $ConfigArg = Get-ItemProperty -Path $RegistryPath -Name "DefaultConfigArg" -ErrorAction SilentlyContinue | Select-Object -ExpandProperty "DefaultConfigArg"
-
-        if ($StrategyName -and $ConfigArg) {
-            return @{
-                "StrategyName" = $StrategyName
-                "ConfigArg"    = $ConfigArg
-            }
-        } else {
-            return @{
-                "StrategyName" = $DefaultStrategy
-                "ConfigArg"    = $DefaultConfigArg
-            }
-        }
-    } else {
-        return @{
-            "StrategyName" = $DefaultStrategy
-            "ConfigArg"    = $DefaultConfigArg
-        }
-    }
-}
-
-# Функция для запуска стратегии по умолчанию при старте скрипта
-function Start-DefaultStrategy {
-    $DefaultStrategyInfo = Get-DefaultStrategy
-
-    if ($DefaultStrategyInfo.StrategyName -and $DefaultStrategyInfo.ConfigArg) {
-        Write-Host "Запуск стратегии по умолчанию из реестра: '$($DefaultStrategyInfo.StrategyName)'"
-        Invoke-ZapretStrategy -StrategyName $DefaultStrategyInfo.StrategyName -Arguments $DefaultStrategyInfo.ConfigArg
-        if ($DefaultStrategyInfo.StrategyName -like "*Discord*") {
-            Restart-Discord
-        }
-    } else {
-        Write-Host "Стратегия по умолчанию не найдена в реестре."
-    }
-}
-
-Start-DefaultStrategy
-
 do {
-    $userInput = Read-Host "Введите цифру (если Вы выбрали стратегию она автоматически станет стратегией по умолчанию)"
+    $userInput = Read-Host "Введите цифру"
 
     switch ($userInput) {
         "0" {
@@ -663,119 +597,71 @@ do {
         }
         "1" {
             Stop-Zapret
-            $DefaultConfigName = "Discord TCP 80"
-            $DefaultConfigArg = "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ1 $YGV1 $YT1 $DISTCP80 $DISUDP2 $UDP2 $DISTCP2 $other1 $faceinsta"
-            Invoke-ZapretStrategy -StrategyName $DefaultConfigName -Arguments $DefaultConfigArg
-            Set-DefaultStrategy -StrategyName $DefaultConfigName -ConfigArg $DefaultConfigArg
+            Invoke-ZapretStrategy -StrategyName "Discord TCP 80" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ1 $YGV1 $YT1 $DISTCP80 $DISUDP2 $UDP2 $DISTCP2 $other1 $faceinsta"
             Restart-Discord
         }
         "2" {
             Stop-Zapret
-            $DefaultConfigName = "Discord fake"
-            $DefaultConfigArg = "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ1 $YGV1 $YT1 $DISUDP1 $UDP1 $DISTCP1 $other1 $faceinsta"
-            Invoke-ZapretStrategy -StrategyName $DefaultConfigName -Arguments $DefaultConfigArg
-            Set-DefaultStrategy -StrategyName $DefaultConfigName -ConfigArg $DefaultConfigArg
+            Invoke-ZapretStrategy -StrategyName "Discord fake" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ1 $YGV1 $YT1 $DISUDP1 $UDP1 $DISTCP1 $other1 $faceinsta"
             Restart-Discord
         }
         "3" {
             Stop-Zapret
-            $DefaultConfigName = "Discord fake и split"
-            $DefaultConfigArg = "--wf-tcp=80,443 --wf-udp=443,50000-50100 $DISUDP3 $DISIP1 $DISTCP80 $DISTCP3 $YQ1 $YGV1 $YT2 $other1 $faceinsta"
-            Invoke-ZapretStrategy -StrategyName $DefaultConfigName -Arguments $DefaultConfigArg
-            Set-DefaultStrategy -StrategyName $DefaultConfigName -ConfigArg $DefaultConfigArg
+            Invoke-ZapretStrategy -StrategyName "Discord fake и split" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-50100 $DISUDP3 $DISIP1 $DISTCP80 $DISTCP3 $YQ1 $YGV1 $YT2 $other1 $faceinsta"
             Restart-Discord
         }
         "4" {
             Stop-Zapret
-            $DefaultConfigName = "Ultimate Fix ALT Beeline-Rostelekom"
-            $DefaultConfigArg = "--wf-tcp=80,443 --wf-udp=443,50000-65535 $DISUDP4 $DISIP2 $DISTCP80 $DISTCP4 $YQ1 $YGV1 $YT2 $other1 $faceinsta"
-            Invoke-ZapretStrategy -StrategyName $DefaultConfigName -Arguments $DefaultConfigArg
-            Set-DefaultStrategy -StrategyName $DefaultConfigName -ConfigArg $DefaultConfigArg
+            Invoke-ZapretStrategy -StrategyName "Ultimate Fix ALT Beeline-Rostelekom" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-65535 $DISUDP4 $DISIP2 $DISTCP80 $DISTCP4 $YQ1 $YGV1 $YT2 $other1 $faceinsta"
             Restart-Discord
         }
         "5" {
             Stop-Zapret
-            $DefaultConfigName = "split с sniext"
-            $DefaultConfigArg = "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ2 $YGV1 $YT3 $DISTCP5 $DISUDP5 $DISIP3 $other1 $faceinsta"
-            Invoke-ZapretStrategy -StrategyName $DefaultConfigName -Arguments $DefaultConfigArg
-            Set-DefaultStrategy -StrategyName $DefaultConfigName -ConfigArg $DefaultConfigArg
+            Invoke-ZapretStrategy -StrategyName "split с sniext" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ2 $YGV1 $YT3 $DISTCP5 $DISUDP5 $DISIP3 $other1 $faceinsta"
         }
         "6" {
             Stop-Zapret
-            $DefaultConfigName = "split с badseq"
-            $DefaultConfigArg = "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ2 $YGV1 $YT4 $DISTCP5 $DISUDP5 $DISIP3 $other1 $faceinsta"
-            Invoke-ZapretStrategy -StrategyName $DefaultConfigName -Arguments $DefaultConfigArg
-            Set-DefaultStrategy -StrategyName $DefaultConfigName -ConfigArg $DefaultConfigArg
+            Invoke-ZapretStrategy -StrategyName "split с badseq" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ2 $YGV1 $YT4 $DISTCP5 $DISUDP5 $DISIP3 $other1 $faceinsta"
         }
         "7" {
             Stop-Zapret
-            $DefaultConfigName = "Rostelecom & Megafon"
-            $DefaultConfigArg = "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ2 $YGV1 $YT4 $DISUDP3 $UDP3 $DISTCP6 $other1 $faceinsta"
-            Invoke-ZapretStrategy -StrategyName $DefaultConfigName -Arguments $DefaultConfigArg
-            Set-DefaultStrategy -StrategyName $DefaultConfigName -ConfigArg $DefaultConfigArg
+            Invoke-ZapretStrategy -StrategyName "Rostelecom & Megafon" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ2 $YGV1 $YT4 $DISUDP3 $UDP3 $DISTCP6 $other1 $faceinsta"
         }
         "8" {
             Stop-Zapret
-            $DefaultConfigName = "Rostelecom v2"
-            $DefaultConfigArg = "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ3 $YGV1 $YT5 $DISUDP3 $UDP3 $DISTCP6 $other1 $faceinsta"
-            Invoke-ZapretStrategy -StrategyName $DefaultConfigName -Arguments $DefaultConfigArg
-            Set-DefaultStrategy -StrategyName $DefaultConfigName -ConfigArg $DefaultConfigArg
+            Invoke-ZapretStrategy -StrategyName "Rostelecom v2" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ3 $YGV1 $YT5 $DISUDP3 $UDP3 $DISTCP6 $other1 $faceinsta"
         }
         "9" {
             Stop-Zapret
-            $DefaultConfigName = "Other v1"
-            $DefaultConfigArg = "--wf-l3=ipv4,ipv6 --wf-tcp=443 --wf-udp=443,50000-65535 $YQ4 $YGV1 $YT3 $DISTCP7 $DISUDP6 $UDP4 $other1 $faceinsta"
-            Invoke-ZapretStrategy -StrategyName $DefaultConfigName -Arguments $DefaultConfigArg
-            Set-DefaultStrategy -StrategyName $DefaultConfigName -ConfigArg $DefaultConfigArg
+            Invoke-ZapretStrategy -StrategyName "Other v1" -Arguments "--wf-l3=ipv4,ipv6 --wf-tcp=443 --wf-udp=443,50000-65535 $YQ4 $YGV1 $YT3 $DISTCP7 $DISUDP6 $UDP4 $other1 $faceinsta"
         }
         "10" {
             Stop-Zapret
-            $DefaultConfigName = "Other v2"
-            $DefaultConfigArg = "--wf-l3=ipv4,ipv6 --wf-tcp=443 --wf-udp=443,50000-65535 $YQ4 $YGV2 $YT6 $DISUDP7 $UDP5 $DISTCP8 $other1 $faceinsta"
-            Invoke-ZapretStrategy -StrategyName $DefaultConfigName -Arguments $DefaultConfigArg
-            Set-DefaultStrategy -StrategyName $DefaultConfigName -ConfigArg $DefaultConfigArg
+            Invoke-ZapretStrategy -StrategyName "Other v2" -Arguments "--wf-l3=ipv4,ipv6 --wf-tcp=443 --wf-udp=443,50000-65535 $YQ4 $YGV2 $YT6 $DISUDP7 $UDP5 $DISTCP8 $other1 $faceinsta"
         }
         "11" {
             Stop-Zapret
-            $DefaultConfigName = "MGTS v1"
-            $DefaultConfigArg = "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ2 $YGV2 $YT7 $DISUDP5 $DISIP3 $DISTCP9 $other1 $faceinsta"
-            Invoke-ZapretStrategy -StrategyName $DefaultConfigName -Arguments $DefaultConfigArg
-            Set-DefaultStrategy -StrategyName $DefaultConfigName -ConfigArg $DefaultConfigArg
+            Invoke-ZapretStrategy -StrategyName "MGTS v1" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ2 $YGV2 $YT7 $DISUDP5 $DISIP3 $DISTCP9 $other1 $faceinsta"
         }
         "12" {
             Stop-Zapret
-            $DefaultConfigName = "MGTS v2"
-            $DefaultConfigArg = "--wf-tcp=80,443 --wf-udp=443,50000-65535 $YT8 $YGV1 $DISTCP10 $YQ5 $DISUDP1 $UDP1 $other1 $faceinsta"
-            Invoke-ZapretStrategy -StrategyName $DefaultConfigName -Arguments $DefaultConfigArg
-            Set-DefaultStrategy -StrategyName $DefaultConfigName -ConfigArg $DefaultConfigArg
+            Invoke-ZapretStrategy -StrategyName "MGTS v2" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-65535 $YT8 $YGV1 $DISTCP10 $YQ5 $DISUDP1 $UDP1 $other1 $faceinsta"
         }
         "13" {
             Stop-Zapret
-            $DefaultConfigName = "MGTS v3"
-            $DefaultConfigArg = "--wf-tcp=80,443 --wf-udp=443,50000-65535 $YT1 $YGV2 $DISTCP10 $YQ5 $DISUDP1 $UDP1 $other1 $faceinsta"
-            Invoke-ZapretStrategy -StrategyName $DefaultConfigName -Arguments $DefaultConfigArg
-            Set-DefaultStrategy -StrategyName $DefaultConfigName -ConfigArg $DefaultConfigArg
+            Invoke-ZapretStrategy -StrategyName "MGTS v3" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-65535 $YT1 $YGV2 $DISTCP10 $YQ5 $DISUDP1 $UDP1 $other1 $faceinsta"
         }
         "14" {
             Stop-Zapret
-            $DefaultConfigName = "MGTS v4"
-            $DefaultConfigArg = "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ1 $YGV3 $YT1 $DISUDP1 $UDP1 $DISTCP1 $other1 $faceinsta"
-            Invoke-ZapretStrategy -StrategyName $DefaultConfigName -Arguments $DefaultConfigArg
-            Set-DefaultStrategy -StrategyName $DefaultConfigName -ConfigArg $DefaultConfigArg
+            Invoke-ZapretStrategy -StrategyName "MGTS v4" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ1 $YGV3 $YT1 $DISUDP1 $UDP1 $DISTCP1 $other1 $faceinsta"
         }
         "30" {
             Stop-Zapret
-            $DefaultConfigName = "Ultimate Config ZL"
-            $DefaultConfigArg = "--wf-tcp=80,443 --wf-udp=443,50000-50099 $YQ6 $YGV2 $YT9 $DISTCP11 $DISUDP8 $DISIP4 $other3 $faceinsta"
-            Invoke-ZapretStrategy -StrategyName $DefaultConfigName -Arguments $DefaultConfigArg
-            Set-DefaultStrategy -StrategyName $DefaultConfigName -ConfigArg $DefaultConfigArg
+            Invoke-ZapretStrategy -StrategyName "Ultimate Config ZL" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-50099 $YQ6 $YGV2 $YT9 $DISTCP11 $DISUDP8 $DISIP4 $other3 $faceinsta"
         }
         "31" {
             Stop-Zapret
-            $DefaultConfigName = "Ultimate Config v2"
-            $DefaultConfigArg = "--wf-tcp=80,443 --wf-udp=443,50000-50090 $YRTMP1 $YQ7 $DISIP5 $DISTCP12 $DISUDP9 $UDP7 $YGV3 $other2 $other4 $faceinsta"
-            Invoke-ZapretStrategy -StrategyName $DefaultConfigName -Arguments $DefaultConfigArg
-            Set-DefaultStrategy -StrategyName $DefaultConfigName -ConfigArg $DefaultConfigArg
+            Invoke-ZapretStrategy -StrategyName "Ultimate Config v2" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-50090 $YRTMP1 $YQ7 $DISIP5 $DISTCP12 $DISUDP9 $UDP7 $YGV3 $other2 $other4 $faceinsta"
         }
         "40" {
             Check-YouTube
