@@ -229,7 +229,6 @@ function Invoke-ZapretStrategy {
 function Stop-Zapret {
     $zapretProcess = Get-Process winws -ErrorAction SilentlyContinue
     if ($zapretProcess) {
-        Write-Host "Перезапуск Запрета..."
         Stop-Process -Force -Name winws
         Stop-Service -Name "Zapret" -Force -ErrorAction SilentlyContinue
         sc.exe delete "Zapret" > $null 2>&1
@@ -452,7 +451,7 @@ function Check-Update {
 
         # Сравниваем версии
         if ([version]$localVersion -lt [version]$latestVersion) {
-            $Title2 = "Доступно обновление! Текущая версия: $localVersion, Новая версия: $latestVersion"
+            $Title2 = "Доступно новое обновление! Текущая версия: $localVersion, Новая версия: $latestVersion"
             $Host.UI.RawUI.WindowTitle = $Title2
             return $true  # Возвращаем $true, если есть обновление
         } else {
