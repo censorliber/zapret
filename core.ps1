@@ -102,7 +102,9 @@ Write-Host ""
 
 $BIN = "$PSScriptRoot\bin\"
 $LISTS = "$PSScriptRoot\lists\"
-$localVersion = "6.3.2"
+$localVersion = "6.3.6"
+
+$Host.UI.RawUI.WindowTitle = "Zapret $localVersion | https://t.me/bypassblock"
 
 function Test-Administrator {
     $identity = [System.Security.Principal.WindowsIdentity]::GetCurrent()
@@ -151,7 +153,6 @@ function Check-AndDownload-WinDivert {
             return
         }
     } else {
-        Write-Host "Драйвер $WinDivertDll найден."
     }
 
     $WinDivert64SysPATH = Join-Path -Path $BIN -ChildPath $WinDivert64Sys
@@ -166,7 +167,6 @@ function Check-AndDownload-WinDivert {
             return
         }
     } else {
-        Write-Host "Драйвер $WinDivert64Sys найден."
     }
 
     $exePath = Join-Path -Path $BIN -ChildPath $exeName
@@ -181,7 +181,6 @@ function Check-AndDownload-WinDivert {
             return # Прерываем выполнение функции в случае ошибки
         }
     } else {
-        Write-Host "Исполняемый файл $exeName найден."
     }
 }
 
@@ -190,8 +189,6 @@ if (!(Test-Administrator)) {
     Start-Process powershell.exe -ArgumentList "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "`"$PSCommandPath`"" -Verb RunAs
     exit
 }
-
-Write-Host "Запуск прошёл успешно..."
 
 Show-Telegram
 Check-AndDownload-WinDivert
@@ -455,7 +452,8 @@ function Check-Update {
 
         # Сравниваем версии
         if ([version]$localVersion -lt [version]$latestVersion) {
-            Write-Host "Доступно обновление! Текущая версия: $localVersion, Новая версия: $latestVersion"
+            $Title2 = "Доступно обновление! Текущая версия: $localVersion, Новая версия: $latestVersion"
+            $Host.UI.RawUI.WindowTitle = $Title2
             return $true  # Возвращаем $true, если есть обновление
         } else {
             Write-Host "У вас установлена последняя версия ($localVersion)."
@@ -469,7 +467,8 @@ function Check-Update {
 
 if (Check-Update) {
     # Предлагаем пользователю скачать обновление
-    $choice = Read-Host "Доступно новое обновление! Скачайте его через файл check_update.bat (введите цифру 1 если Вы согласны обновить программу / введите цифру 0 если против)"
+    Write-Host "Доступно новое обновление! Текущая версия: $localVersion, Новая версия: $latestVersion"
+    $choice = Read-Host "Вы можете скачать его прямо сейчас (введите цифру 1 если Вы согласны обновить программу / введите цифру 0 если против)"
     if ($choice -eq "1") {
         # Здесь код для скачивания и установки обновления
         Start-Process -FilePath "powershell.exe" -ArgumentList "-File `"$BIN\check_update.ps1`""
