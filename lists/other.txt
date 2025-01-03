@@ -26,6 +26,7 @@ holod.media
 dept.one
 idelreal.org
 rferl.org
+krymr.com
 indigogobot.com
 glaznews.com
 cdn.hsmedia.ru
