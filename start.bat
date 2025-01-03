@@ -18,5 +18,5 @@ if %errorlevel%==0 (
 
 echo "Скрипт не находится в временной папке. Продолжаем выполнение..."
 
-powershell.exe Set-ExecutionPolicy Unrestricted -Scope CurrentUser
-powershell.exe -ExecutionPolicy Bypass -File "%~dp0core.ps1"
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe Set-ExecutionPolicy Unrestricted -Scope CurrentUser
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File "%~dp0core.ps1"

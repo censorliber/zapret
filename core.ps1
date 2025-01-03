@@ -7,6 +7,88 @@ if ($PSVersionTable.PSVersion.Major -lt 6) {
     Clear-Host
 }
 
+
+<#
+### 1.3. Настройки файла hosts
+В файл `C:\Windows\System32\drivers\etc\hosts` пропишите следующее содержание (_рекомендуется использовать [`Notepad++`](https://github.com/notepad-plus-plus/notepad-plus-plus/releases), ссылка на оф. сайт была заблокирована_):
+
+```
+31.13.72.36 facebook.com
+31.13.72.36 www.facebook.com
+31.13.72.12 static.xx.fbcdn.net
+31.13.72.18 fburl.com
+157.240.227.174 www.instagram.com
+157.240.227.174 instagram.com
+31.13.72.53 static.cdninstagram.com
+31.13.72.53 edge-chat.instagram.com
+157.240.254.63 scontent.cdninstagram.com
+157.240.205.63 scontent-hel3-1.cdninstagram.com
+104.21.32.39 rutracker.org
+172.67.182.196 rutracker.org
+116.202.120.184 torproject.org
+116.202.120.184 bridges.torproject.org
+116.202.120.166 community.torproject.org
+162.159.152.4 medium.com
+172.67.182.196 rutracker.org
+188.114.96.1 dept.one
+142.250.185.238 youtube.com
+142.250.186.110 www.youtube.com
+130.255.77.28 ntc.party
+```
+
+Либо на какой-то из примеров ниже (_предыдущий вариант удалите_):
+```
+31.13.72.36 facebook.com
+31.13.72.36 www.facebook.com
+31.13.72.12 static.xx.fbcdn.net
+31.13.72.18 fburl.com
+157.240.229.174 www.instagram.com
+157.240.229.174 instagram.com
+31.13.72.53 static.cdninstagram.com
+31.13.72.53 edge-chat.instagram.com
+31.13.72.53 scontent-arn2-1.cdninstagram.com
+157.240.247.63 scontent.cdninstagram.com
+157.240.205.63 scontent-hel3-1.cdninstagram.com
+104.21.32.39 rutracker.org
+172.67.182.196 rutracker.org
+116.202.120.184 torproject.org
+116.202.120.184 bridges.torproject.org
+116.202.120.166 community.torproject.org
+162.159.152.4 medium.com
+172.67.182.196 rutracker.org
+188.114.96.1 dept.one
+142.250.185.238 youtube.com
+142.250.186.110 www.youtube.com
+130.255.77.28 ntc.party
+```
+
+```
+31.13.72.36 facebook.com
+31.13.72.36 www.facebook.com
+31.13.72.12 static.xx.fbcdn.net
+31.13.72.18 fburl.com
+157.240.225.174 instagram.com
+157.240.225.174 www.instagram.com
+157.240.225.174 i.instagram.com
+31.13.72.53 edge-chat.instagram.com
+31.13.72.53 scontent-arn2-1.cdninstagram.com
+31.13.72.53 scontent.cdninstagram.com
+31.13.72.53 static.cdninstagram.com 
+157.240.205.63 scontent-hel3-1.cdninstagram.com
+104.21.32.39 rutracker.org
+172.67.182.196 rutracker.org
+116.202.120.184 torproject.org
+116.202.120.184 bridges.torproject.org
+116.202.120.166 community.torproject.org
+162.159.152.4 medium.com
+172.67.182.196 rutracker.org
+188.114.96.1 dept.one
+142.250.185.238 youtube.com
+142.250.186.110 www.youtube.com
+130.255.77.28 ntc.party
+```
+#>
+
 Write-Host "██████████████████████████████████████████████████████████████████"
 Write-Host ""
 Write-Host "███████      ██████      ██████     ██████       ███████    ███████"
@@ -20,7 +102,7 @@ Write-Host ""
 
 $BIN = "$PSScriptRoot\bin\"
 $LISTS = "$PSScriptRoot\lists\"
-$localVersion = "6.3.4"
+$localVersion = "6.3.2"
 
 function Test-Administrator {
     $identity = [System.Security.Principal.WindowsIdentity]::GetCurrent()
@@ -341,87 +423,6 @@ function Edit-Hosts {
     Write-Host "Файл hosts успешно обновлён."
 }
 
-<#
-### 1.3. Настройки файла hosts
-В файл `C:\Windows\System32\drivers\etc\hosts` пропишите следующее содержание (_рекомендуется использовать [`Notepad++`](https://github.com/notepad-plus-plus/notepad-plus-plus/releases), ссылка на оф. сайт была заблокирована_):
-
-```
-31.13.72.36 facebook.com
-31.13.72.36 www.facebook.com
-31.13.72.12 static.xx.fbcdn.net
-31.13.72.18 fburl.com
-157.240.227.174 www.instagram.com
-157.240.227.174 instagram.com
-31.13.72.53 static.cdninstagram.com
-31.13.72.53 edge-chat.instagram.com
-157.240.254.63 scontent.cdninstagram.com
-157.240.205.63 scontent-hel3-1.cdninstagram.com
-104.21.32.39 rutracker.org
-172.67.182.196 rutracker.org
-116.202.120.184 torproject.org
-116.202.120.184 bridges.torproject.org
-116.202.120.166 community.torproject.org
-162.159.152.4 medium.com
-172.67.182.196 rutracker.org
-188.114.96.1 dept.one
-142.250.185.238 youtube.com
-142.250.186.110 www.youtube.com
-130.255.77.28 ntc.party
-```
-
-Либо на какой-то из примеров ниже (_предыдущий вариант удалите_):
-```
-31.13.72.36 facebook.com
-31.13.72.36 www.facebook.com
-31.13.72.12 static.xx.fbcdn.net
-31.13.72.18 fburl.com
-157.240.229.174 www.instagram.com
-157.240.229.174 instagram.com
-31.13.72.53 static.cdninstagram.com
-31.13.72.53 edge-chat.instagram.com
-31.13.72.53 scontent-arn2-1.cdninstagram.com
-157.240.247.63 scontent.cdninstagram.com
-157.240.205.63 scontent-hel3-1.cdninstagram.com
-104.21.32.39 rutracker.org
-172.67.182.196 rutracker.org
-116.202.120.184 torproject.org
-116.202.120.184 bridges.torproject.org
-116.202.120.166 community.torproject.org
-162.159.152.4 medium.com
-172.67.182.196 rutracker.org
-188.114.96.1 dept.one
-142.250.185.238 youtube.com
-142.250.186.110 www.youtube.com
-130.255.77.28 ntc.party
-```
-
-```
-31.13.72.36 facebook.com
-31.13.72.36 www.facebook.com
-31.13.72.12 static.xx.fbcdn.net
-31.13.72.18 fburl.com
-157.240.225.174 instagram.com
-157.240.225.174 www.instagram.com
-157.240.225.174 i.instagram.com
-31.13.72.53 edge-chat.instagram.com
-31.13.72.53 scontent-arn2-1.cdninstagram.com
-31.13.72.53 scontent.cdninstagram.com
-31.13.72.53 static.cdninstagram.com 
-157.240.205.63 scontent-hel3-1.cdninstagram.com
-104.21.32.39 rutracker.org
-172.67.182.196 rutracker.org
-116.202.120.184 torproject.org
-116.202.120.184 bridges.torproject.org
-116.202.120.166 community.torproject.org
-162.159.152.4 medium.com
-172.67.182.196 rutracker.org
-188.114.96.1 dept.one
-142.250.185.238 youtube.com
-142.250.186.110 www.youtube.com
-130.255.77.28 ntc.party
-```
-#>
-
 function Check-YouTube {
     try {
         $response = Invoke-WebRequest -Uri "https://jnn-pa.googleapis.com" -Method GET
@@ -468,14 +469,10 @@ function Check-Update {
 
 if (Check-Update) {
     # Предлагаем пользователю скачать обновление
-    $choice = Read-Host "Скачать обновление? (введите цифру 1 если Вы согласны обновить программу / введите цифру 0 если против)"
+    $choice = Read-Host "Доступно новое обновление! Скачайте его через файл check_update.bat (введите цифру 1 если Вы согласны обновить программу / введите цифру 0 если против)"
     if ($choice -eq "1") {
         # Здесь код для скачивания и установки обновления
-        Write-Host "Скачивание обновления... (если не скачалось посетите сайт https://t.me/bypassblock)"
-        Start-Sleep -Seconds 2
-        Write-Host "Пожалуйста удалите старую папку после того как Вы скачаете новую папку (запускайте уже новую версию!)"
-        Start-Sleep -Seconds 5
-        Start-Process https://github.com/censorliber/zapret/releases/download/$latestVersion/zapret$latestVersion.zip
+        Start-Process -FilePath "powershell.exe" -ArgumentList "-File `"$BIN\check_update.ps1`""
         Exit 0
     } elseif ($choice -eq "0") {
         Write-Host "ОБНОВЛЕНИЕ ОТМЕНЕНО! В БУДУЩЕМ ВЫ ДОЛЖНЫ СКАЧАТЬ НОВУЮ ВЕРСИЮ"
@@ -621,43 +618,43 @@ do {
         }
         "5" {
             Stop-Zapret
-            Invoke-ZapretStrategy -StrategyName "split с sniext" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ2 $YT3 $DISTCP5 $DISUDP5 $DISIP3 $other1 $faceinsta"
+            Invoke-ZapretStrategy -StrategyName "split с sniext" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ2 $YGV1 $YT3 $DISTCP5 $DISUDP5 $DISIP3 $other1 $faceinsta"
         }
         "6" {
             Stop-Zapret
-            Invoke-ZapretStrategy -StrategyName "split с badseq" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ2 $YT4 $DISTCP5 $DISUDP5 $DISIP3 $other1 $faceinsta"
+            Invoke-ZapretStrategy -StrategyName "split с badseq" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ2 $YGV1 $YT4 $DISTCP5 $DISUDP5 $DISIP3 $other1 $faceinsta"
         }
         "7" {
             Stop-Zapret
-            Invoke-ZapretStrategy -StrategyName "Rostelecom & Megafon" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ2 $YT4 $DISUDP3 $UDP3 $DISTCP6 $other1 $faceinsta"
+            Invoke-ZapretStrategy -StrategyName "Rostelecom & Megafon" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ2 $YGV1 $YT4 $DISUDP3 $UDP3 $DISTCP6 $other1 $faceinsta"
         }
         "8" {
             Stop-Zapret
-            Invoke-ZapretStrategy -StrategyName "Rostelecom v2" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ3 $YT5 $DISUDP3 $UDP3 $DISTCP6 $other1 $faceinsta"
+            Invoke-ZapretStrategy -StrategyName "Rostelecom v2" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ3 $YGV1 $YT5 $DISUDP3 $UDP3 $DISTCP6 $other1 $faceinsta"
         }
         "9" {
             Stop-Zapret
-            Invoke-ZapretStrategy -StrategyName "Other v1" -Arguments "--wf-l3=ipv4,ipv6 --wf-tcp=443 --wf-udp=443,50000-65535 $YQ4 $YT3 $DISTCP7 $DISUDP6 $UDP4 $other1 $faceinsta"
+            Invoke-ZapretStrategy -StrategyName "Other v1" -Arguments "--wf-l3=ipv4,ipv6 --wf-tcp=443 --wf-udp=443,50000-65535 $YQ4 $YGV1 $YT3 $DISTCP7 $DISUDP6 $UDP4 $other1 $faceinsta"
         }
         "10" {
             Stop-Zapret
-            Invoke-ZapretStrategy -StrategyName "Other v2" -Arguments "--wf-l3=ipv4,ipv6 --wf-tcp=443 --wf-udp=443,50000-65535 $YQ4 $YT6 $DISUDP7 $UDP5 $DISTCP8 $other1 $faceinsta"
+            Invoke-ZapretStrategy -StrategyName "Other v2" -Arguments "--wf-l3=ipv4,ipv6 --wf-tcp=443 --wf-udp=443,50000-65535 $YQ4 $YGV2 $YT6 $DISUDP7 $UDP5 $DISTCP8 $other1 $faceinsta"
         }
         "11" {
             Stop-Zapret
-            Invoke-ZapretStrategy -StrategyName "MGTS v1" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ2 $YT7 $DISUDP5 $DISIP3 $DISTCP9 $other1 $faceinsta"
+            Invoke-ZapretStrategy -StrategyName "MGTS v1" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ2 $YGV2 $YT7 $DISUDP5 $DISIP3 $DISTCP9 $other1 $faceinsta"
         }
         "12" {
             Stop-Zapret
-            Invoke-ZapretStrategy -StrategyName "MGTS v2" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-65535 $YT8 $DISTCP10 $YQ5 $DISUDP1 $UDP1 $other1 $faceinsta"
+            Invoke-ZapretStrategy -StrategyName "MGTS v2" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-65535 $YT8 $YGV1 $DISTCP10 $YQ5 $DISUDP1 $UDP1 $other1 $faceinsta"
         }
         "13" {
             Stop-Zapret
-            Invoke-ZapretStrategy -StrategyName "MGTS v3" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-65535 $YT1 $DISTCP10 $YQ5 $DISUDP1 $UDP1 $other1 $faceinsta"
+            Invoke-ZapretStrategy -StrategyName "MGTS v3" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-65535 $YT1 $YGV2 $DISTCP10 $YQ5 $DISUDP1 $UDP1 $other1 $faceinsta"
         }
         "14" {
             Stop-Zapret
-            Invoke-ZapretStrategy -StrategyName "MGTS v4" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ1 $YT1 $DISUDP1 $UDP1 $DISTCP1 $other1 $faceinsta"
+            Invoke-ZapretStrategy -StrategyName "MGTS v4" -Arguments "--wf-tcp=80,443 --wf-udp=443,50000-59000 $YQ1 $YGV3 $YT1 $DISUDP1 $UDP1 $DISTCP1 $other1 $faceinsta"
         }
         "30" {
             Stop-Zapret
